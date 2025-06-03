@@ -65,7 +65,7 @@ At this point I also make sure that I have Turni^p drovers, just in case. It see
 
 ## Frontend
 
-Either Daijishō with Obtainium, or ES-DE (personnal download link sent by mail after subscription). I choose ES-DE :
+Either Daijishō with Obtainium, or ES-DE (personal download link sent by mail after subscription). I choose ES-DE :
 - Use https://github.com/BinaryQuantumSoul/esde_android_apps so as to import Android apps apps, games and emulators in ES-DE. To install, add https://github.com/schattenphoenix/es_applauncher/releases in Obtainium
 - Set as the default launcher to improve the "console" experience and forget about Android. It can be done at the very end because the AOSP Android launcher is more convenient during setup.
 
