@@ -7,7 +7,7 @@ Starting the RPM for the first time, don't install anything and set the AOSP And
 ## Android Playstore Applications
 
 - MiXplorer (Silver for support)
-- Synthing-fork
+- Syncthing-fork
 - Entertainment : Plex, Youtube ...
 - Android games
 
