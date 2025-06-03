@@ -49,9 +49,9 @@ systems.txt
 ## Emulators install
 
 Use Obtainium with the https://github.com/RJNY/Obtainium-Emulation-Pack to install :
-- Azahar
-- Dolphin
 - RetroArch (nightly)
+- Azahar (requires renaming of the *.3ds files)
+- Dolphin because I could not make the RA core work
 - MelonDS
 
 For PS2 emulation :
@@ -68,6 +68,35 @@ At this point I also make sure that I have Turni^p drovers, just in case. It see
 Either Daijishō with Obtainium, or ES-DE (personal download link sent by mail after subscription). I choose ES-DE :
 - Use https://github.com/BinaryQuantumSoul/esde_android_apps so as to import Android apps apps, games and emulators in ES-DE. To install, add https://github.com/schattenphoenix/es_applauncher/releases in Obtainium
 - Set as the default launcher to improve the "console" experience and forget about Android. It can be done at the very end because the AOSP Android launcher is more convenient during setup.
+
+## RetroArch cores
+
+
+
+## Scaling in RetroArch
+
+Even for 3D games, when the emulator renders at 2x or more, I strongly dislike the imbalance between texture resolution, the small number of polygons and the super smooth object borders and textures. So I always let shaders do the upsacale and emulators/cores all run at 1x. 
+
+The RPM is great when it comes to scaling options. As a rule of thumb, I'm all in slightly overscaned integer scaling to maximise the size of the objects on the screen, and help with clean shaders. For 4:3 systems, I typically go for settings such as https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0 
+
+For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let non-integer scaling with core provided screen aspect ratio.
+
+## Shaders
+
+For CRT consoles, I like CRT shaders. I'm not after fancy and high-fidelity but rather about :
+- considering a crt shader as a kind of specific interpolation shader
+- getting more colors and better gradients out of the limited 8bits and 16bits palettes
+- helping with de-dithering for 8bits and 16bits games
+- give a bit more "organic" feel rather than the flat and clinical square pixels
+So in any shader I mention, I remove curvature and vignetting.
+
+### Dolphin
+
+Built-in shaders don't help. Clownacy has ported GLSL shaders  for the standalone Dolphin
+
+### NetherSX2
+
+The build in Triangle and Lottes shaders scale well. Others produce banding/moire artifacts. I choose Lottes.  
 
 
 
