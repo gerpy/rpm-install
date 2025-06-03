@@ -46,7 +46,7 @@ systems.txt
 
 ## Emulators install
 
-Use Obtainium with the https://github.com/RJNY/Obtainium-Emulation-Pack to install :
+Use Obtainium with https://github.com/RJNY/Obtainium-Emulation-Pack to install emulators :
 - RetroArch (nightly)
 - Azahar (requires renaming of the *.3ds files)
 - Dolphin because I could not make the RA core work
