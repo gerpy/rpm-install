@@ -2,7 +2,7 @@
 
 General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/
 
-Starting the RPM for the first time, don't install anything and set the AOSP Android launcher by default.
+Starting the RPM for the first time, don't install anything and set the Android AOSP launcher by default.
 
 ## Android Playstore Applications
 
