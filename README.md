@@ -167,12 +167,24 @@ I save the shader configs as content directory settings. I'm looking after masks
 - On the clean side without vignetting or curvature
 - Not too complicated
 
-As I love the rendering of `crt-gdv-ultra-trinitron` fot the way it adds depth to pixels, it sucks when not integer scaled (tested on 5 different H and V scalings with different systems such as Neo.Geo, CPS1). The best I could find is `crt-easymode-halation`. It is on the same clean side as Dolphin's and NetherSX2's chosen shaders.
+As I love the rendering of `crt-gdv-mini-ultra-trinitron` fot the way it adds depth to pixels, it sucks when not integer scaled (tested on 5 different H and V scalings with different systems such as Neo.Geo, CPS1). The best I could find is **`crt-easymode-halation`**. It is on the same clean side as Dolphin's and NetherSX2's shaders above.
 
-The author tells a bit about configuration here : https://forums.libretro.com/t/configuring-crt-easymode/3384. My experiments show that when scalines are combines with different masks, not every mask is robust to integer scaling :
-Avoid 0, 4, 5
+The author tells a bit about configuration here : https://forums.libretro.com/t/configuring-crt-easymode/3384. My experiments show that when scalines are combined with different masks, not every mask is robust to non-integer scaling : avoid #4, #5 and #7. The remaning masks are :
+- #1 for a 2 colors aperture grille
+- #2 for a 3 colors aperture grille
+- #3 for a 2 colors shadow mask
+- #6 for a 3 colors shadow mask
 
-My configurations will change from system to system according the fol
+I choose #2 and #6 depending on the sysem :
+- #2 if I am after sharpness (Neo.Geo typically)
+- #6 if I'm after smoothing things a bit more (PS1 typically)
+
+Whatever I choose :
+- Increase //Gamma input// up to 2.8 so as to bring more puch
+- Decrease Sharpness horizontal a lot
+- Increase significantly halation and a bit 
+
+
 
 
 
