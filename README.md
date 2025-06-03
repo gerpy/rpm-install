@@ -61,6 +61,8 @@ Install Classic and keep the other just in case
 
 Other systems are emulated with RetroArch so as to get a better shader support.
 
+At this point I also make sure that I have Turni^p drovers, just in case. It seems that the `turnip_v24.3.0_R9v2` version is nice for the RPM : https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v24.3.0_r9
+
 ## Frontend
 
 Either Daijishō with Obtainium, or ES-DE (personnal download link sent by mail after subscription). I choose ES-DE :
