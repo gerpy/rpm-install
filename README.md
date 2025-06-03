@@ -148,7 +148,11 @@ Built-in shaders don't help. Clownacy has ported GLSL shaders for the standalone
 - Scanlines produce a lot of moire/banding artifacts on the RPM, up to a point that the shaders are not useable
 - There shouldn't be apparent scanlines in a first place for Gamecube 480p content.
 
-To remove scanlines as well as curvature, the shaders need to be modified in an editor : default values must be changed. 
+To remove scanlines as well as curvature, the shaders need to be modified in an editor : default values must be changed :
+- With mask #1 : aperture grille (https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
+- With mask #2 : shadow mask (https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
+
+To smooth things, shadow masks are better, in my understanding. Aperture grilles are sharper.
 
 ### NetherSX2
 
