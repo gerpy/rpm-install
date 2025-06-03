@@ -18,8 +18,7 @@ storage/emulated/0/Android/data/org.dolphinemu.dolphinemu/files/Shaders`
 - RetroArch Guest slang shaders >  `/storage/emulated/0/RetroArch/shaders/shaders_slang/crt/shaders/guest` 
 - RetroArch Retro slang Crisis shaders `/storage/emulated/0/RetroArch/shaders/shaders_slang/retro crisis
 /storage/emulated/0/RetroArch/shaders/shaders_slang/retro crisis`
-- RetroArch Sonkun shaders `/storage/emulated/0/RetroArch/shaders/shaders_slang/sonkun`
-/storage/emulated/0/RetroArch/shaders/shaders_slang/sonkun
+- RetroArch Sonkun shaders `/storage/emulated/0/RetroArch/shaders/shaders_slang/sonkun/storage/emulated/0/RetroArch/shaders/shaders_slang/sonkun`
 - Screenshots > `storage/emulated/0/Pictures/Screenshots`
 
 Syncthing offers the possibility to filter what gets synced. It's particularily usefull for ROMs. I don't sync 16:9 systems to my RPM so I've setup the followinf exclusions for the ROMs sync :
