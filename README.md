@@ -111,9 +111,9 @@ For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let 
 | Platform    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, crop overscan |
-| GB | as default (the shader performs the underscale integer scaling |
-| GBC | as default (the shader performs the underscale integer scaling |
-| NGPC | as default (the shader performs the underscale integer scaling |
+| GB | as default (the shader performs the underscale integer scaling) |
+| GBC | as default (the shader performs the underscale integer scaling) |
+| NGPC | as default (the shader performs the underscale integer scaling) |
 | GBA | Integer scaling, X+Y, Underscale |
 
 I prefer to store the scaling options as core overrides rather than content directory overrides.
