@@ -131,7 +131,7 @@ For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let 
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
 
-GB, GBC and NGPC are set as default with non integer scaling but the shader performs an underscale integer scaling.
+GB, GBC and NGPC are set as default with non integer scaling but the shader performs an underscaled integer scaling with borders of its own.
 
 ## Shaders
 
@@ -144,7 +144,11 @@ So in any shader I mention, I remove curvature and vignetting.
 
 ### Dolphin
 
-Built-in shaders don't help. Clownacy has ported GLSL shaders  for the standalone Dolphin
+Built-in shaders don't help. Clownacy has ported GLSL shaders for the standalone Dolphin (https://clownacy.wordpress.com/2023/06/30/porting-crt-shaders-from-retroarch-to-dolphin/). Latest versions are found in this repo : https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/Shaders. The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`. They are supposed to expose parameters to the Dolphin UI but Dolphin on Android doesn't have the same features as on Windows. So the shaders need tweaking for best rendering :
+- Scanlines produce a lot of moire/banding artifacts on the RPM, up to a point that the shaders are not useable
+- There shouldn't be apparent scanlines in a first place for Gamecube 480p content.
+
+To remove scanlines as well as curvature, the shaders need to be modified in an editor : default values must be changed. 
 
 ### NetherSX2
 
