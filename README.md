@@ -5,7 +5,7 @@ General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-sta
 ## Syncthing
 
 I have an "Emulation" folder on my hardrive, with various ressources. I do syncthing extensively for convenience : if I want to add/edit sometging, I just do it on my PC and changes get synced automatically. My main shares are the following :
-- BIOS - Platforms (files sorted by patform, as an archive)
+- BIOS - Platforms (files sorted by patform, as an archive) -> ezrfv
 - BIOS - RetroArch (same but filtered and flattened)
 - ROMs sorted according the ES-DE folder naming scheme
 - A shared folder where I store APKs and drivers such as Turnip's to have them on my device for the - initiali install
