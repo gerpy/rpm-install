@@ -8,7 +8,13 @@ Use Obtainium with the https://github.com/RJNY/Obtainium-Emulation-Pack to insta
 - RetroArch (nightly)
 - MelonDS
 
+For PS2 emulation, build 
 
+## Frontend
+
+Either Daijishō with Obtainium, or ES-DE (link in mailbox). I choose ES-DE :
+- Use the 
+- Set as the default launcher to improve the "handheld console" experience and forget about Android. Before 
 
 
 
