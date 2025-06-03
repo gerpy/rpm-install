@@ -101,13 +101,15 @@ Even for 3D games, when the emulator renders at 2x or more, I strongly dislike t
 
 The RPM is great when it comes to scaling options. As a rule of thumb, I'm all in slightly overscaned integer scaling to maximise the size of the objects on the screen, and help with clean shaders. For 4:3 systems, I typically go for settings such as https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0 
 
-For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let non-integer scaling with core provided screen aspect ratio.
+For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let non-integer scaling with core provided screen aspect ratio. These settings are highly device dependant.
 
-| Platform    | Savings |
+| Platform    | Settings > Video > Scaling options |
 | -------- | ------- |
-| January  | $250    |
-| February | $80     |
-| March    | $420    |
+| Default | Non integer, crop overscan |
+| GB |  |
+| GBC |  |
+| NGPC |  |
+| GBA |  |
 
 I prefer to store the scaling options as core overrides rather than content directory overrides.
 
