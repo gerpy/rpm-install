@@ -55,6 +55,7 @@ Use Obtainium with https://github.com/RJNY/Obtainium-Emulation-Pack to install e
 For PS2 emulation :
 1. Build/patch https://github.com/Trixarian/NetherSX2-patch
 2. Build/patch https://github.com/Trixarian/NetherSX2-classic
+
 Install Classic and keep the other just in case 
 
 Other systems are emulated with RetroArch so as to get a better shader support.
