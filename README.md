@@ -2,6 +2,15 @@
 
 General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/
 
+Starting the RPM for the first time, don't install anything and set the AOSP Android launcher by default.
+
+## Android Playstore Applications
+
+- MiXplorer (Silver for support)
+- Synthing-fork
+- Entertainment : Plex, Youtube ...
+- Android games
+
 ## Syncthing
 
 I have an "Emulation" folder on my hardrive, with various ressources. I' using Syncthing extensively for convenience : if I want to add/edit sometging, I just do it on my PC and changes get synced automatically.
@@ -54,9 +63,9 @@ Other systems are emulated with RetroArch so as to get a better shader support.
 
 ## Frontend
 
-Either Daijishō with Obtainium, or ES-DE (link in mailbox). I choose ES-DE :
+Either Daijishō with Obtainium, or ES-DE (personnal download link sent by mail after subscription). I choose ES-DE :
 - Use https://github.com/BinaryQuantumSoul/esde_android_apps so as to import Android apps apps, games and emulators in ES-DE. To install, add https://github.com/schattenphoenix/es_applauncher/releases in Obtainium
-- Set as the default launcher to improve the "handheld console" experience and forget about Android. Before 
+- Set as the default launcher to improve the "handheld console" experience and forget about Android. It can be done at the very end because the AOSP Android launcher is more convenient during setup.
 
 
 
