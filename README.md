@@ -5,9 +5,9 @@ General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-sta
 ## Syncthing
 
 I have an "Emulation" folder on my hardrive, with various ressources. I do syncthing extensively for convenience : if I want to add/edit sometging, I just do it on my PC and changes get synced automatically. My main shares are the following :
-- BIOS - Platforms (files sorted by patform, as an archive) -> ezrfv
-- BIOS - RetroArch (same but filtered and flattened)
-- ROMs sorted according the ES-DE folder naming scheme
+- BIOS - Platforms (files sorted by patform, as an archive) > storage/7AE4-BF10/BIOS/Plateformes (where 7AE4-BF10 is my external SD card number) as a large reference archive
+- BIOS - RetroArch (same but filtered and flattened) > storage/7AE4-BF10/BIOS/RetroArch as an unaltered archive (not my RA system folder because a lot of stuff is added to the system folder by RA)
+- ROMs sorted according the ES-DE folder naming scheme > /storage/7AE4-BF10/ROMs with exexclusions (see below)
 - A shared folder where I store APKs and drivers such as Turnip's to have them on my device for the - initiali install
 - Dolphin shaders
 - RetroArch config folder
@@ -17,6 +17,20 @@ I have an "Emulation" folder on my hardrive, with various ressources. I do synct
 - RetroArch Sonkun shaders
 - Screenshots
 
+Syncthing offers the possibility to filter what gets synced. It's particularily usefull for ROMs. I don't sync 16:9 systems to my RPM so I've setup the followinf exclusions for the ROMs sync :
+- psp
+- psvita
+- xbox
+- wiiu
+- switch
+- *.3ds
+- *.xls
+- .nomedia
+- m3u-generator.py
+- gamelist.xml
+- systems.txt
+- .media
+- .images
 
 ## Emulators install
 
