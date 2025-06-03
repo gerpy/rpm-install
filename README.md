@@ -103,6 +103,14 @@ The RPM is great when it comes to scaling options. As a rule of thumb, I'm all i
 
 For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let non-integer scaling with core provided screen aspect ratio.
 
+| Platform    | Savings |
+| -------- | ------- |
+| January  | $250    |
+| February | $80     |
+| March    | $420    |
+
+I prefer to store the scaling options as core overrides rather than content directory overrides.
+
 ## Shaders
 
 For CRT consoles, I like CRT shaders. I'm not after fancy and high-fidelity but rather about :
@@ -118,7 +126,9 @@ Built-in shaders don't help. Clownacy has ported GLSL shaders  for the standalon
 
 ### NetherSX2
 
-The build in Triangle and Lottes shaders scale well. Others produce banding/moire artifacts. I choose Lottes.  
+The build in Triangle and Lottes shaders scale well. Others produce banding/moire artifacts. I choose Lottes. 
 
+### RetroArch
 
+I save the shader configs as content directory settings.
 
