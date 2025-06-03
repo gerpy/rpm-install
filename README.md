@@ -94,10 +94,23 @@ If you prefer a content directory override, name the file `n64.cfg`.
 
 | Platform    | Prefered core |
 | -------- | ------- |
+| Dreamcast | Flycast |
 | GB | Gambatte |
 | GBC | Gambatte |
-| NGPC |  |
-| GBA | mGBA |
+| Jaguar | Virtual Jaguar |
+| MasterSystem | PicoDrive |
+| Megadrive | PicoDrive |
+| MS DOS | DOSBox-Pure |
+| N64 | ParaLLEl N64 |
+| NDS | melonDS |
+| NeoGeo | Final Burn Neo |
+| NES | Nestopia |
+| NGPC | Beetle NeoPop |
+| PC Engine | Beetle PCE |
+| PSX | SwanStation |
+| Saturn | Beetle ? |
+| SNES | Snes9x - Current |
+| Vectrex | Vecx |
 
 ## Scaling in RetroArch
 
@@ -107,15 +120,18 @@ The RPM is great when it comes to scaling options. As a rule of thumb, I'm all i
 
 For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let non-integer scaling with core provided screen aspect ratio. These settings are highly device dependant.
 
-| Platform    | Settings > Video > Scaling options |
+| Core    | Settings > Video > Scaling options |
 | -------- | ------- |
-| Default | Non integer, crop overscan |
-| GB | as default (the shader performs the underscale integer scaling) |
-| GBC | as default (the shader performs the underscale integer scaling) |
-| NGPC | as default (the shader performs the underscale integer scaling) |
-| GBA | Integer scaling, X+Y, Underscale |
+| Default | Non integer, Core provided AR, Crop Overscan |
+| Nestopia | Smart Integer scale X+Y, Overscale, 1:1 PAR |
+| PicoDrive | Smart Integer scale X+Y, Overscale, 1:1 PAR |
+| Snes9x | Smart Integer scale X+Y, Overscale, 1:1 PAR |
+| Virtual Jaguar | Smart Integer scale X+Y, Overscale, Core provided AR |
+| SwanStation | Smart Integer scale X+Y, Overscale, Core provided AR |
+| Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
+| Beetle PCE | Non integer, Full, Crop Overscan |
 
-I prefer to store the scaling options as core overrides rather than content directory overrides.
+GB, GBC and NGPC are set as default with non integer scaling but the shader performs an underscale integer scaling.
 
 ## Shaders
 
