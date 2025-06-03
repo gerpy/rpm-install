@@ -6,7 +6,7 @@ General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-sta
 
 I have an "Emulation" folder on my hardrive, with various ressources. I' using Syncthing extensively for convenience : if I want to add/edit sometging, I just do it on my PC and changes get synced automatically.
 
-My main shares are the following :
+My main shares are the following (see following sectons for some details):
 - BIOS - Platforms (files sorted by patform, as an archive) > `storage/7AE4-BF10/BIOS/Plateformes` (where 7AE4-BF10 is my external SD card number) as a large reference archive
 - BIOS - RetroArch (same but filtered and flattened) > `storage/7AE4-BF10/BIOS/RetroArch` as an unaltered archive (not my RA system folder because a lot of stuff is added to the system folder by RA)
 - ROMs sorted according the ES-DE folder naming scheme > `/storage/7AE4-BF10/ROMs` with exexclusions (see below)
