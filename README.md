@@ -71,7 +71,15 @@ Either Daijishō with Obtainium, or ES-DE (personal download link sent by mail a
 
 ## RetroArch installation
 
-### General considerations
+### BIOS (system)
+
+The https://docs.libretro.com/library/bios/ documentation lists the required and optional system files for every RA core. To download these ressources, my go-to sources are :
+- https://github.com/Abdess/retroarch_system
+- a comprehensive Bios Batocera Pack archive in case something is missing by Abdess' (see https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm for instance)
+
+I sync a small custom BIOS pack for RA with Syncthing on my external SD. From there, I copy the files into the `/storage/emulated/0/RetroArch/system` folder on my internal RPM storage.
+
+### General configuration
 
 Many guides detail that, such as https://retrogamecorps.com/2022/02/28/retroarch-starter-guide/
 
@@ -82,8 +90,6 @@ video_driver = "gl"
 If you prefer a content directory override, name the file `n64.cfg`.
 
 **Important : check the directories.** I like more of them than default in `/storage/emulated/0/RetroArch/` rather than `/storage/emulated/0/Android/data/...`
-
-### BIOS (system)
 
 ## RetroArch cores
 
