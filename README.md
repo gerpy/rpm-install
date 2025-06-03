@@ -34,7 +34,8 @@ m3u-generator.py
 gamelist.xml
 systems.txt
 .media
-.images```
+.images
+```
 
 ## Emulators install
 
