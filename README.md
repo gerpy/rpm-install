@@ -152,13 +152,27 @@ To remove scanlines as well as curvature, the shaders need to be modified in an 
 - With mask #1 : aperture grille (https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
 - With mask #2 : shadow mask (https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
 
-To smooth things, shadow masks are better, in my understanding. Aperture grilles are sharper.
+Shadow masks make a better job at smoothing in my understanding. Aperture grilles are sharper. I chose mask #2 here.
 
 ### NetherSX2
 
-The build in Triangle and Lottes shaders scale well. Others produce banding/moire artifacts. I choose Lottes. 
+The build in Triangle and Lottes shaders scale well. Others produce banding/moire artifacts. I choose Lottes which ressembles Dolphin's mask #2.
 
 ### RetroArch
 
-I save the shader configs as content directory settings.
+I save the shader configs as content directory settings. I'm looking after masks that :
+- Tweakable masks so as to choose between shadow masks and aperture grilles
+- Robust //wrt// non integer scalings
+- Available as SLANG as well as GLSL to unify systems on my RPM (N64 in particular)
+- On the clean side without vignetting or curvature
+- Not too complicated
+
+As I love the rendering of `crt-gdv-ultra-trinitron` fot the way it adds depth to pixels, it sucks when not integer scaled (tested on 5 different H and V scalings with different systems such as Neo.Geo, CPS1). The best I could find is `crt-easymode-halation`. It is on the same clean side as Dolphin's and NetherSX2's chosen shaders.
+
+The author tells a bit about configuration here : https://forums.libretro.com/t/configuring-crt-easymode/3384. My experiments show that when scalines are combines with different masks, not every mask is robust to integer scaling :
+Avoid 0, 4, 5
+
+My configurations will change from system to system according the fol
+
+
 
