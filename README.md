@@ -162,14 +162,14 @@ The build in Triangle and Lottes shaders scale well. Others produce banding/moir
 
 I save the shader configs as content directory settings. I'm looking after masks that :
 - Tweakable masks so as to choose between shadow masks and aperture grilles
-- Robust //wrt// non integer scalings
+- Robust *wrt* non integer scalings
 - Available as SLANG as well as GLSL to unify systems on my RPM (N64 in particular)
 - On the clean side without vignetting or curvature
 - Not too complicated
 
 As I love the rendering of `crt-gdv-mini-ultra-trinitron` fot the way it adds depth to pixels, it sucks when not integer scaled (tested on 5 different H and V scalings with different systems such as Neo.Geo, CPS1). The best I could find is **`crt-easymode-halation`**. It is on the same clean side as Dolphin's and NetherSX2's shaders above.
 
-The author tells a bit about configuration here : https://forums.libretro.com/t/configuring-crt-easymode/3384. My experiments show that when scalines are combined with different masks, not every mask is robust to non-integer scaling : avoid #4, #5 and #7. The remaning masks are :
+The author tells a bit about configuration here : https://forums.libretro.com/t/configuring-crt-easymode/3384. My experiments show that when scalines are combined with different mask types, not every mask is robust to non-integer scaling : avoid #4, #5 and #7. The remaning masks are :
 - #1 for a 2 colors aperture grille
 - #2 for a 3 colors aperture grille
 - #3 for a 2 colors shadow mask
@@ -180,10 +180,14 @@ I choose #2 and #6 depending on the sysem :
 - #6 if I'm after smoothing things a bit more (PS1 typically)
 
 Whatever I choose :
-- Increase //Gamma input// up to 2.8 so as to bring more puch
-- Decrease Sharpness horizontal a lot
-- Increase significantly halation and a bit 
+- Increase *Gamma input* up to 2.8 so as to bring more puch
+- Decrease *Sharpness horizontal* a lot
+- Increase both *Mask strengths* and keep them equal
+- Increase both *Scanline strengths*
+- Reduce *Curvature* to 0
+- Significantly increase *Halation* and *Diffusion* a bit less
 
+Values can be set per system to evoke higher or lower end CRT screens.
 
 
 
