@@ -10,7 +10,7 @@ Starting the RPM for the first time, don't install anything and set the Android 
 
 - MiXplorer (Silver for support)
 - Syncthing-fork
-- Entertainment : Plex, Youtube ...
+- Entertainment : Plex, PlexAmp, Youtube ...
 - Android games
 
 ## Syncthing
