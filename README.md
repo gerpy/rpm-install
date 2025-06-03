@@ -16,7 +16,7 @@ Starting the RPM for the first time, don't install anything and set the Android 
 I have an "Emulation" folder on my hardrive, with various ressources. I' using Syncthing extensively for convenience : if I want to add/edit sometging, I just do it on my PC and changes get synced automatically.
 
 My main shares are the following (see following sectons for some details):
-- BIOS - Platforms (files sorted by patform, as an archive) > `storage/7AE4-BF10/BIOS/Plateformes` (where 7AE4-BF10 is my external SD card number) as a large reference archive
+- BIOS - Platforms (files sorted by patform, as an archive) > `storage/7AE4-BF10/BIOS/Plateforms` (where 7AE4-BF10 is my external SD card number) as a large reference archive
 - BIOS - RetroArch (same but filtered and flattened) > `storage/7AE4-BF10/BIOS/RetroArch` as an unaltered archive (not my RA system folder because a lot of stuff is added to the system folder by RA)
 - ROMs sorted according the ES-DE folder naming scheme > `/storage/7AE4-BF10/ROMs` with exexclusions (see below)
 - A shared folder where I store APKs and drivers such as Turnip's to have them on my device for the - initial install > `storage/7AE4-BF10/Synchronisation/Shared`
