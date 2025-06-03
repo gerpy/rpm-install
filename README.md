@@ -93,7 +93,12 @@ If you prefer a content directory override, name the file `n64.cfg`.
 
 ## RetroArch cores
 
-
+| Platform    | Prefered core |
+| -------- | ------- |
+| GB | Gambatte |
+| GBC | Gambatte |
+| NGPC |  |
+| GBA | mGBA |
 
 ## Scaling in RetroArch
 
@@ -106,10 +111,10 @@ For fancy pixel aspect ratios such as CPS or NeoGeo or many Arcade games, I let 
 | Platform    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, crop overscan |
-| GB |  |
-| GBC |  |
-| NGPC |  |
-| GBA |  |
+| GB | as default (the shader performs the underscale integer scaling |
+| GBC | as default (the shader performs the underscale integer scaling |
+| NGPC | as default (the shader performs the underscale integer scaling |
+| GBA | Integer scaling, X+Y, Underscale |
 
 I prefer to store the scaling options as core overrides rather than content directory overrides.
 
