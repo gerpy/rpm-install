@@ -1,3 +1,5 @@
+> WIP. For instance, saves sync not covered yet.
+
 # Install notes for the Retroid Pocket Mini handheld console
 
 General guidelines : https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/
