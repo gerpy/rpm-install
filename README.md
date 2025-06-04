@@ -213,11 +213,9 @@ The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`. They are supposed to e
 
 To remove scanlines as well as curvature, the shaders need to be modified in an editor by changing their default values. These are modified **`crt-lottes-fast.glsl`** :
 
-- With **mask #1**: aperture grille  
-  [crt_lottes_fast_mask1.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
+- With **mask #1** (aperture grille) : [crt_lottes_fast_mask1.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
 
-- With **mask #2**: shadow mask  
-  [crt_lottes_fast_mask3.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
+- With **mask #2** (shadow mask) : [crt_lottes_fast_mask3.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
 
 Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  I chose **mask #2** here.
 
