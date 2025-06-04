@@ -102,8 +102,7 @@ To download these resources, my go-to sources are:
   (see for example: [https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm](https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm))
 
 I sync a small custom BIOS pack for RetroArch with **Syncthing** on my external SD card.  
-From there, I copy the necessary files into the internal RPM storage at:  
-`/storage/emulated/0/RetroArch/system`
+From there, I copy the necessary files into the internal RPM storage at `/storage/emulated/0/RetroArch/system`
 
 ### General configuration
 
@@ -116,11 +115,7 @@ This causes a major issue: you won’t be able to launch a game, and therefore w
 
 It is technically possible through the UI, but it requires many steps and restarts.
 
-Since the `config` folder is synced via **Syncthing**, the easiest approach is to manually add an override file to:
-
-```
-/storage/emulated/0/RetroArch/config/ParaLLEl N64
-```
+Since the `config` folder is synced via **Syncthing**, the easiest approach is to manually add an override file to `/storage/emulated/0/RetroArch/config/ParaLLEl N64`.
 
 For a **core override**, name the file `ParaLLEl N64.cfg`
 and include the following content:
@@ -132,10 +127,7 @@ video_driver = "gl"
 If you prefer to apply a **content directory override**, name the file `n64.cfg`.
 
 **Important: check your directory structure.**  
-I prefer having more of my config folders in
-`/storage/emulated/0/RetroArch/`
-rather than in the default scoped storage path:
-`/storage/emulated/0/Android/data/...`
+I prefer having more of my config folders in `/storage/emulated/0/RetroArch/` rather than in the default scoped storage path `/storage/emulated/0/Android/data/...`
 
 ## RetroArch cores
 
@@ -168,7 +160,7 @@ The **Retroid Pocket Mini (RPM)** is excellent when it comes to scaling options.
 As a rule of thumb, I prefer **slightly overscanned integer scaling** to maximize object size on screen and ensure clean shader output.
 
 For **4:3 systems**, I typically use configurations like the following:  
-[https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0)
+[Shaunimman Screen Utils|https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0)
 
 For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms,  
 I allow **non-integer scaling** with the **core-provided aspect ratio**.
@@ -188,9 +180,7 @@ I allow **non-integer scaling** with the **core-provided aspect ratio**.
 
 For 8:7-like systems, integer scaling with overscan induces a small amount of overscan crop, which is suitable and anticipated by developers, since consumer retro CRTs were always set up with about 5% overscan.
 
-PC Engine's mostly used 256×240 resolution is different because many games seem to be designed with very little tolerance to overscan, so overscan is avoided.  
-The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel ratio leads to very tall images.  
-The RPM's display aspect ratio is a good compromise for me.
+PC Engine's mostly used 256×240 resolution is different because many games seem to be designed with very little tolerance to overscan, so overscan is avoided. The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel ratio leads to very tall images. The RPM's display aspect ratio is a good compromise for me.
 
 For 4:3 consoles such as the PS1, smart integer scaling results in slight overscan on the sides and a slightly increased height compared to boxed full 4:3.
 
@@ -216,9 +206,7 @@ https://clownacy.wordpress.com/2023/06/30/porting-crt-shaders-from-retroarch-to-
 The latest versions are found in this repo:  
 https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/Shaders
 
-The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`.  
-They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the parameters tweaking feature as on Windows.  
-Therefore, the shaders need manual tweaking for optimal rendering:
+The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`. They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the parameters tweaking feature as on Windows. Therefore, the shaders need manual tweak edits for optimal rendering:
 
 - Scanlines produce a lot of moiré/banding artifacts on the RPM, to the point that the shaders become unusable  
 - There shouldn't be visible scanlines at all for GameCube 480p content
@@ -231,8 +219,7 @@ To remove scanlines as well as curvature, the shaders need to be modified in an 
 - With **mask #2**: shadow mask  
   [crt_lottes_fast_mask3.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
 
-Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  
-I chose **mask #2** here.
+Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  I chose **mask #2** here.
 
 The `crt-pi.glsl` mask is just an aperture grille with scanlines, without added value over `crt-lottes-fast.glsl` IMO.
 
@@ -253,10 +240,8 @@ I'm looking for masks that:
 - Are not too complicated
 
 I love the rendering of `crt-gdv-mini-ultra-trinitron` for the way it adds depth to pixels, but it performs poorly when not integer-scaled (tested on 5 different horizontal and vertical scalings with systems such as NeoGeo and CPS1).  
-The best I could find is **`crt-easymode-halation`**, which is on the same clean side as the shaders used by Dolphin and NetherSX2.
 
-The author discusses configuration here:  
-https://forums.libretro.com/t/configuring-crt-easymode/3384
+The best I could find is **`crt-easymode-halation`**, which is on the same clean side as the shaders used by Dolphin and NetherSX2. The author discusses configuration here: https://forums.libretro.com/t/configuring-crt-easymode/3384
 
 My experiments show that when scalings are combined with different mask types, not every mask is robust to non-integer scaling. Avoid masks **#4**, **#5**, and **#7**.  
 The remaining masks are:
