@@ -216,9 +216,9 @@ I choose **Lottes**, which resembles Dolphin's mask #2.
 
 ### RetroArch
 
-I save the shader configs as **content directory settings**.  
-
 #### Home consoles (CRT)
+
+The following CRT shader configs is saved as my **global preset**. Specific configurations (Megadrive and handhelds) come as **content directory presets**. If I want to make a system look more dirty, I use **content directories overrides** with Blargg filters and and I let shaders as it. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
 
 I'm looking for masks that:
 
@@ -226,7 +226,7 @@ I'm looking for masks that:
 - Are robust *with respect to* non-integer scalings  
 - Are available in both **SLANG** and **GLSL** to unify systems on my RPM (especially for N64)  
 - Have a clean look without vignetting or curvature  
-- Are not too complicated
+- Are not too complicated to configure (`guest` is far beyond my understanding)
 
 I love the rendering of `crt-gdv-mini-ultra-trinitron` for the way it adds depth to pixels, but it performs poorly when not integer-scaled (tested on 5 different horizontal and vertical scalings with systems such as NeoGeo and CPS1).  
 
@@ -285,4 +285,4 @@ There's a serie of very nice shaders in the **`handhelds`** folder. For GBA thou
 | NeoGeo Pocket Color | `gameboy-color-dot-matrix-white-bg` |
 | GB Advance | `retro-v3` with color correction let to the core |
 
-I didn't explore these shaders options yet.
+These settings are saved as **content directory settings**.
