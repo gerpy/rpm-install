@@ -285,3 +285,4 @@ There's a serie of very nice shaders in the **`handhelds`** folder. For GBA thou
 | NeoGeo Pocket Color | `gameboy-color-dot-matrix-white-bg` |
 | GB Advance | `retro-v3` with color correction let to the core |
 
+I didn't explore thses shaders options yet.
