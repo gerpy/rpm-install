@@ -269,4 +269,4 @@ My default settings for **`crt-easymode-halation`** are :
 
 The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
 
-For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`** (on text in particular).
+For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than by blurring everything under super heavy composite stuff.
