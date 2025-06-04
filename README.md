@@ -217,13 +217,13 @@ The latest versions are found in this repo:
 https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/Shaders
 
 The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`.  
-They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the same features as on Windows.  
+They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the parameters tweaking feature as on Windows.  
 Therefore, the shaders need manual tweaking for optimal rendering:
 
 - Scanlines produce a lot of moiré/banding artifacts on the RPM, to the point that the shaders become unusable  
 - There shouldn't be visible scanlines at all for GameCube 480p content
 
-To remove scanlines as well as curvature, the shaders need to be modified in an editor by changing their default values:
+To remove scanlines as well as curvature, the shaders need to be modified in an editor by changing their default values. These are modified **`crt-lottes-fast.glsl`** :
 
 - With **mask #1**: aperture grille  
   [crt_lottes_fast_mask1.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
@@ -233,6 +233,8 @@ To remove scanlines as well as curvature, the shaders need to be modified in an 
 
 Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  
 I chose **mask #2** here.
+
+The `crt-pi.glsl` mask is just an aperture grille with scanlines, without added value over `crt-lottes-fast.glsl` IMO.
 
 ### NetherSX2
 
