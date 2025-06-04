@@ -217,6 +217,9 @@ I choose **Lottes**, which resembles Dolphin's mask #2.
 ### RetroArch
 
 I save the shader configs as **content directory settings**.  
+
+#### Home consoles (CRT)
+
 I'm looking for masks that:
 
 - Are tweakable, allowing a choice between shadow masks and aperture grilles  
@@ -270,3 +273,15 @@ My default settings for **`crt-easymode-halation`** are :
 The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
 
 For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than by blurring everything under super heavy composite stuff.
+
+#### Handheld consoles
+
+There's a serie of very nice shaders in the **`handhelds`** folder. For GBA though, the shader of the serie is buggy (weired strip lines on some games such as Advance wars), sor I did it otherwise.
+
+| Platform | Shader |
+| -------- | ------- |
+| Gameboy | `gameboy-pocket` |
+| Gameboy Color | `gameboy-color-dot-matrix` |
+| NeoGeo Pocket Color | `gameboy-color-dot-matrix-white-bg` |
+| GB Advance | `retro-v3` with color correction let to the core |
+
