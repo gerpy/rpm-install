@@ -170,8 +170,9 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | SwanStation | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
+| Gambatte | Smart Integer scale X+Y, Overscale, 1:1 PAR |
 
-GB, GBC, and NGPC are let by default with non-integer scaling, but the shader performs an underscaled integer scaling with borders of its own.
+GB, GBC, and NGPC are let by default with non-integer scaling, but the shaders perform an underscaled integer scaling with borders of their own.
 
 ## Shaders
 
