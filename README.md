@@ -269,7 +269,7 @@ I choose **#2** or **#6** depending on the system:
 - **#2** when I want sharpness (typically NeoGeo)  
 - **#6** when I want to smooth things out a bit more (typically PS1)
 
-My default is :
+My default settings for **`crt-easymode-halation`** are :
 
 | Parameter | Value |
 | -------- | ------- |
