@@ -186,7 +186,15 @@ I allow **non-integer scaling** with the **core-provided aspect ratio**.
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
 
-GB, GBC and NGPC are set as default with non integer scaling but the shader performs an underscaled integer scaling with borders of its own.
+For 8:7-like systems, integer scaling with overscan induces a small amount of overscan crop, which is suitable and anticipated by developers, since consumer retro CRTs were always set up with about 5% overscan.
+
+PC Engine's mostly used 256×240 resolution is different because many games seem to be designed with very little tolerance to overscan, so overscan is avoided.  
+The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel ratio leads to very tall images.  
+The RPM's display aspect ratio is a good compromise for me.
+
+For 4:3 consoles such as the PS1, smart integer scaling results in slight overscan on the sides and a slightly increased height compared to boxed full 4:3.
+
+GB, GBC, and NGPC are set by default with non-integer scaling, but the shader performs an underscaled integer scaling with borders of its own.
 
 ## Shaders
 
