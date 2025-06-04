@@ -81,10 +81,10 @@ I choose **ES-DE**:
 Set ES-DE as the **default launcher** to improve the "console-like" experience and forget about Android.  
 This can be done at the **very end**, as the AOSP Android launcher is more convenient during the initial setup.
 
-
 ## RetroArch installation
 
 ### BIOS (system)
+
 The [Libretro BIOS documentation](https://docs.libretro.com/library/bios/) lists the required and optional system files for every RetroArch core.
 
 To download these resources, my go-to sources are:
@@ -145,19 +145,21 @@ I prefer having more of my config folders in `/storage/emulated/0/RetroArch/` ra
 
 ## Scaling in RetroArch
 
-Even for 3D games, when the emulator renders at 2× or more, I strongly dislike the imbalance between texture resolution, the low polygon count, and the overly smooth object borders and textures.  
-So I always let **shaders handle the upscaling**, and I run all emulators/cores at **1× internal resolution**.
+> These settings are highly device-dependent.
+
+Even for 3D games, when the emulator renders at 2× or more, I strongly dislike the imbalance between texture resolution, the low polygon count, and the overly smooth object borders and textures. So I always let **shaders handle the upscaling**, and I run all emulators/cores at **1× internal resolution**.
 
 The **Retroid Pocket Mini (RPM)** is excellent when it comes to scaling options.  
 As a rule of thumb, I prefer **slightly overscanned integer scaling** to maximize object size on screen and ensure clean shader output.
 
 For **4:3 systems**, I typically use configurations like the following:  
-[Shaunimman Screen Utils|https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0)
+[Shaunimman Screen Utils](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0). Smart integer scaling results in slight overscan on the sides and a slightly increased height compared to boxed full 4:3.
 
-For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms,  
-I allow **non-integer scaling** with the **core-provided aspect ratio**.
+For **8:7-like systems**, integer scaling with overscan induces a small amount of overscan crop both vertically and horizontally, which is suitable and anticipated by developers, since consumer retro CRTs were always set up with about 5% overscan.
 
-> These settings are highly device-dependent.
+PC Engine mostly used a 256×240 resolution but overscan isn't super welcome here because many games seem to be designed with very little tolerance to overscan. The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel aspect ratio leads to very tall images with black pillars. The RPM's display aspect ratio is a good compromise for me, very close to 1:1 PAR though.
+
+For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**.
 
 | Core    | Settings > Video > Scaling options |
 | -------- | ------- |
@@ -170,13 +172,7 @@ I allow **non-integer scaling** with the **core-provided aspect ratio**.
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
 
-For 8:7-like systems, integer scaling with overscan induces a small amount of overscan crop, which is suitable and anticipated by developers, since consumer retro CRTs were always set up with about 5% overscan.
-
-PC Engine's mostly used 256×240 resolution is different because many games seem to be designed with very little tolerance to overscan, so overscan is avoided. The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel ratio leads to very tall images. The RPM's display aspect ratio is a good compromise for me.
-
-For 4:3 consoles such as the PS1, smart integer scaling results in slight overscan on the sides and a slightly increased height compared to boxed full 4:3.
-
-GB, GBC, and NGPC are set by default with non-integer scaling, but the shader performs an underscaled integer scaling with borders of its own.
+GB, GBC, and NGPC are let by default with non-integer scaling, but the shader performs an underscaled integer scaling with borders of its own.
 
 ## Shaders
 
@@ -273,6 +269,4 @@ My default settings for **`crt-easymode-halation`** are :
 
 The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
 
-
-
-
+For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`**
