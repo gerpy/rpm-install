@@ -271,7 +271,7 @@ My default settings for **`crt-easymode-halation`** are :
 | Diffusion | 0.00 |
 | Brightness | 1.00 |
 
-The corner size of the shader is about the same size of the rounded corner of the physical size. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
+The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
 
 
 
