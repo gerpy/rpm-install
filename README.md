@@ -147,6 +147,8 @@ I prefer having more of my config folders in `/storage/emulated/0/RetroArch/` ra
 | SNES | Snes9x - Current |
 | Vectrex | Vecx |
 
+For Vectrex, overlays are almost mandatory and I'll try to use a pack on [archive.org](https://archive.org/details/moonland_202212) that seems to have good quality ones.
+
 ## Scaling in RetroArch
 
 > These settings are highly device-dependent.
