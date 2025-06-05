@@ -171,7 +171,9 @@ Even for 3D games, when the core renders at 2× or more, I strongly dislike how 
 The Retroid Pocket Mini is excellent when it comes to scaling options. As a rule of thumb, I prefer a slight overscan crop to maximize object size on screen and ensure clean shader output. And with the RPM, it often translates into integer scaling as the cherry on the cake.
 
 For **4:3 systems**, I typically use configurations like the following:  
-[Shaunimman Screen Utils](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0). Smart integer scaling results in tiny overscan on the sides and a very slightly increased height compared to boxed full 4:3.
+[Shaunimman Screen Config](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0).
+
+Smart integer scaling results in tiny overscan on the sides and a very slightly increased height compared to boxed full 4:3.
 
 For **8:7-like systems**, integer scaling with overscan induces a small amount of overscan crop both vertically and horizontally, which is suitable and anticipated by developers, since CRTs games were developped with an overscan up to ~5% on consumer CRT TVs.
 
