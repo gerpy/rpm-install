@@ -93,6 +93,7 @@ The [Libretro BIOS documentation](https://docs.libretro.com/library/bios/) lists
 
 To download these resources, my go-to sources are:
 
+- [RetroPieBIOS](https://github.com/archtaurus/RetroPieBIOS) have most often the right MD5
 - [Abdess' retroarch_system repository](https://github.com/Abdess/retroarch_system)
 - A comprehensive **BIOS Batocera Pack** archive, in case something is missing from Abdess’ repo  
   (see for example: [https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm](https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm))
