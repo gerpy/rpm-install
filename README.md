@@ -185,17 +185,18 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | Core    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, Core provided AR, Crop Overscan |
-| Nestopia | Smart Integer scale X+Y, Overscale, 1:1 PAR |
-| PicoDrive | Smart Integer scale X+Y, Overscale, 1:1 PAR |
-| Snes9x | Smart Integer scale X+Y, Overscale, 1:1 PAR |
-| Virtual Jaguar | Smart Integer scale X+Y, Overscale, Core provided AR |
-| SwanStation | Smart Integer scale Y, Overscale, Core provided AR |
-| ParaLLEl | Smart Integer scale Y, Overscale, Core provided AR |
-| Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
+| Nestopia | Smart Integer scale X+Y, 1:1 PAR |
+| PicoDrive | Smart Integer scale X+Y, 1:1 PAR |
+| Snes9x | Smart Integer scale X+Y, 1:1 PAR |
+| Virtual Jaguar | Smart Integer scale X+Y, Core provided AR |
+| SwanStation | Smart Integer scale Y, Core provided AR |
+| ParaLLEl | Smart Integer scale Y, Core provided AR |
+| Beetle Saturn | Smart Integer scale X+Y, 1:1 PAR |
+| Flycast | Smart Integer scale X+Y, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
-| Gambatte | Smart Integer scale X+Y, Overscale, 1:1 PAR |
-| mGBA | Smart Integer scale X+Y, Overscale, 1:1 PAR |
-| Beetle NeoPop | Smart Integer scale X+Y, Overscale, 1:1 PAR |
+| Gambatte | Smart Integer scale X+Y, 1:1 PAR |
+| mGBA | Smart Integer scale X+Y, 1:1 PAR |
+| Beetle NeoPop | Smart Integer scale X+Y, 1:1 PAR |
 
 ## Shaders
 
