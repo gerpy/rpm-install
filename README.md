@@ -57,7 +57,7 @@ Use **Obtainium** with [Obtainium-Emulation-Pack](https://github.com/RJNY/Obtain
 - **Dolphin**, because I couldn't get the RetroArch core to work
 - **MelonDS**
 
-### For PS2 emulation:
+### PS2 emulation:
 
 1. Build/patch [`NetherSX2-patch`](https://github.com/Trixarian/NetherSX2-patch)
 2. Build/patch [`NetherSX2-classic`](https://github.com/Trixarian/NetherSX2-classic)
@@ -69,6 +69,10 @@ Other systems are emulated using **RetroArch** to benefit from better shader sup
 At this point, I also make sure I have the **Turnip** drivers installed, just in case.  
 It seems that the `turnip_v24.3.0_R9v2` version works well for the RPM:  
 [Turnip v24.3.0_r9 on GitHub](https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v24.3.0_r9)
+
+### 3DS Layouts
+
+Citra and Azahar permit custom layouts for screens. See here : https://github.com/gerpy/rpm-install/tree/main/Layouts%20for%203DS.
 
 ## Frontend
 
