@@ -125,6 +125,14 @@ If you prefer to apply a **content directory override**, name the file `n64.cfg`
 **Important: check your directory structure.**  
 I prefer having more of my config folders in `/storage/emulated/0/RetroArch/` rather than in the default scoped storage path `/storage/emulated/0/Android/data/...`
 
+### Settings saving policy
+
+I save :
+
+- **Scaling** parameters as core overrides, the alternative beeing at the core level in core settings
+- **Shaders** presets as content directory presets because some cores such as Pico Drive emulate platforms of different generations that I prefer to shade differently
+- **Video filters** such as Blargg's as content directory overrides because these are related to shaders
+
 ## RetroArch cores
 
 | Platform    | Prefered core |
