@@ -239,7 +239,7 @@ I choose **Lottes**, which resembles Dolphin's mask #2.
 
 #### Home consoles (CRT)
 
-The following CRT shader configs is saved as my **global preset**. Specific configurations (Megadrive and handhelds) come as **content directory presets**. If I want to make a system look more dirty, I use **content directories overrides** with Blargg filters and and I let shaders as it. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
+The following CRT shader configs is saved as my **global preset**. Specific configurations (such as Megadrive) come as **content directory presets**. If I want to make a system look more dirty, I use **content directories overrides** with Blargg filters and and I let shaders as it. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
 
 I'm looking for masks that:
 
