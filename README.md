@@ -282,13 +282,15 @@ For **Megadrive**, due to the super heavy use of dithering to overcome the only 
 
 #### Handheld consoles
 
-There's a serie of very nice shaders in the **`handhelds`** folder.
+As much I like the `dot-matrix` serie of shaders, they appeared buggy at the time of install : missing gridlines for GBA, and unexppected blacklines top and down after closing content and starting again.
 
-| Platform | Shader |
-| -------- | ------- |
-| Gameboy | `gameboy-pocket` |
-| Gameboy Color | `gameboy-color-dot-matrix` |
-| NeoGeo Pocket Color | `gameboy-color-dot-matrix-white-bg` |
-| GB Advance | `gameboy-advance-dot-matrix` |
+So I've chosen **`simpletex_lcd`** for GB(C) with a slightly darkened grid for GBC (not to let white areas empty with just the background texture). For GB, prepening **`gb-palette-pocket`** makes it unnecessary and provides a retro vibe. Neo.Geo Pocket Color is setup as GBC. For GBA, **`gameboy-advance-dot-matrix`** is just fine.
+
+| Platform | Shader | Settings |
+| -------- | ------- | ------- |
+| Gameboy | `gb-palette-pocket` + `simpletex_lcd` | `Darken Colours = 0.00` |
+| Gameboy Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
+| NeoGeo Pocket Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
+| GB Advance | `gameboy-advance-dot-matrix` | Default |
 
 These settings are saved as **content directory settings**.
