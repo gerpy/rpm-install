@@ -72,7 +72,7 @@ It seems that the `turnip_v24.3.0_R9v2` version works well for the RPM:
 
 ### 3DS Layouts
 
-Citra and Azahar permit custom layouts for screens. See here : https://github.com/gerpy/rpm-install/tree/main/Layouts%20for%203DS.
+Citra and Azahar permit multi-screen custom layouts. See here : https://github.com/gerpy/rpm-install/tree/main/Layouts%20for%203DS.
 
 ## Frontend
 
