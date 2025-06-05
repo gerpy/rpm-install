@@ -1,4 +1,4 @@
-> WIP. For instance, saves sync not covered yet.
+> WIP. For instance, saves sync not covered yet. And I did not setup DS and 3DS yet
 
 # Install notes for the Retroid Pocket Mini handheld console
 
