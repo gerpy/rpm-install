@@ -135,6 +135,11 @@ I save :
 
 ## RetroArch cores
 
+Everything I can, I emulate using RetroArch cores.  But :
+- I couldn't make the Dolphin core work
+- Performance is better on NetherSX2
+- Standalone emulators are better at setting custum 2 screens layouts, and easier to shade
+
 | Platform    | Prefered core |
 | -------- | ------- |
 | Dreamcast | Flycast |
