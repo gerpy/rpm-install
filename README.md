@@ -170,9 +170,9 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | SwanStation | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
-| Gambatte | Smart Integer scale X+Y, Overscale, 1:1 PAR |
+| mGBA | Smart Integer scale X+Y, Overscale, 1:1 PAR |
 
-GB, GBC, and NGPC are let by default with non-integer scaling, but the shaders perform an underscaled integer scaling with borders of their own.
+GB, GBC, and NGPC are let by default with non-integer scaling, but the shaders perform an underscaled integer scaling with borders of their own. GBA is not setup the same way because the shader below doesn't work very well with non-integer scaling.
 
 ## Shaders
 
@@ -276,13 +276,13 @@ For **Megadrive**, due to the super heavy use of dithering to overcome the only 
 
 #### Handheld consoles
 
-There's a serie of very nice shaders in the **`handhelds`** folder. For GBA though, the shader of the serie is buggy (weired strip lines on some games such as Advance wars), sor I did it otherwise.
+There's a serie of very nice shaders in the **`handhelds`** folder.
 
 | Platform | Shader |
 | -------- | ------- |
 | Gameboy | `gameboy-pocket` |
 | Gameboy Color | `gameboy-color-dot-matrix` |
 | NeoGeo Pocket Color | `gameboy-color-dot-matrix-white-bg` |
-| GB Advance | `retro-v3` with color correction let to the core |
+| GB Advance | `gameboy-advance-dot-matrix` |
 
 These settings are saved as **content directory settings**.
