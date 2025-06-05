@@ -189,7 +189,8 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | PicoDrive | Smart Integer scale X+Y, Overscale, 1:1 PAR |
 | Snes9x | Smart Integer scale X+Y, Overscale, 1:1 PAR |
 | Virtual Jaguar | Smart Integer scale X+Y, Overscale, Core provided AR |
-| SwanStation | Smart Integer scale X+Y, Overscale, Core provided AR |
+| SwanStation | Smart Integer scale Y, Overscale, Core provided AR |
+| ParaLLEl | Smart Integer scale Y, Overscale, Core provided AR |
 | Flycast | Smart Integer scale X+Y, Overscale, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
 | Gambatte | Smart Integer scale X+Y, Overscale, 1:1 PAR |
