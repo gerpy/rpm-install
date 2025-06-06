@@ -179,6 +179,8 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | mGBA | Smart Integer scale X+Y, 1:1 PAR |
 | Beetle NeoPop | Smart Integer scale X+Y, 1:1 PAR |
 
+---
+
 ## Shaders
 
 > For home consoles, I like CRT shaders but I'm not after fancy or high-fidelity effects. I'm just after the general mood by:
@@ -204,7 +206,15 @@ Shadow masks do a better job at smoothing, in my understanding. Aperture grilles
 
 ### NetherSX2
 
-The built-in Triangle and Lottes shaders scale well. Others produce banding/moiré artifacts. I choose **Lottes**, which resembles Dolphin's mask #2.
+The built-in Triangle and Lottes shaders scale well. Others produce banding/moiré artifacts. I choose **`Lottes`**, which resembles Dolphin's mask #2.
+
+### Citra
+
+The built-in **`Dots`** postprocessing video shader is a decent LCD shader.
+
+### MelonDS
+
+There is a built-in **`LCD`** postprocessing video shader.
 
 ### RetroArch
 
