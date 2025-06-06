@@ -1,5 +1,3 @@
-> WIP. Saves sync not covered yet. And I still haven't setup DS or 3DS.
-
 # Install notes for the Retroid Pocket Mini handheld console
 
 > There are meny general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
