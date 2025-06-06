@@ -161,6 +161,8 @@ For **8:7-like systems**, integer scaling with overscan induces a small amount o
 
 For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**.
 
+> A few errors just below. WIP
+
 | Core    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, Core provided AR, Crop Overscan |
