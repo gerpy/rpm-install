@@ -203,6 +203,7 @@ landscape_bottom_top=720
 landscape_bottom_right=860
 landscape_bottom_bottom=1080
 ```
+However, the top and the bottom screen of the 3DS are not the same apsct ratio so when you swan top and bottom screen, they come streched.
 
 ---
 
