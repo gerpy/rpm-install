@@ -3,6 +3,8 @@
 > There are many general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
 > The present notes are personnal and reflect my own tastes. I don't rewrite everything out there but rather focus on topics which obvioulsy require too much time for content creators in a permanent rush, such as scaling or shaders with the attention they deserve).
 
+---
+
 When starting the RPM for the first time, don't install anything and set the Android AOSP launcher as the default.
 
 ## Android Play Store Applications
@@ -76,6 +78,8 @@ Either **Daijishō** via Obtainium, or **ES-DE** (personal download link sent by
 
 Set ES-DE as the **default launcher** to improve the "console-like" experience and forget about Android.  
 This can be done at the **very end**, as the AOSP Android launcher is more convenient during the initial setup.
+
+---
 
 ## RetroArch installation
 
@@ -204,6 +208,10 @@ landscape_bottom_right=860
 landscape_bottom_bottom=1080
 ```
 However, the top and the bottom screen of the 3DS are not the same apsct ratio so when you swan top and bottom screen, they come streched.
+
+### Melon DS
+
+I was not able to find the config files so I was left with the touchscreen to try to draw layouts by hand. I've set a layout with a top 4x screen (1020 pix wide) and a bottom 1.5x screen (384 pix wide). The LCD shader looks fine.
 
 ---
 
