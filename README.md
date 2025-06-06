@@ -58,12 +58,9 @@ Use **Obtainium** with [Obtainium-Emulation-Pack](https://github.com/RJNY/Obtain
 1. Build/patch [`NetherSX2-patch`](https://github.com/Trixarian/NetherSX2-patch)
 2. Build/patch [`NetherSX2-classic`](https://github.com/Trixarian/NetherSX2-classic)
 
-Install the **Classic** version and keep the other one just in case.
+Install the **Classic** version and keep the other one just in case. Other systems are emulated using **RetroArch** to benefit from better shader support.
 
-Other systems are emulated using **RetroArch** to benefit from better shader support.
-
-At this point, I also make sure I have the **Turnip** drivers installed, just in case.  
-It seems that the `turnip_v24.3.0_R9v2` version works well for the RPM:  
+At this point, I also make sure I have the **Turnip** drivers installed, just in case.  It seems that the `turnip_v24.3.0_R9v2` version works well for the RPM:  
 [Turnip v24.3.0_r9 on GitHub](https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v24.3.0_r9)
 
 ### 3DS Layouts
@@ -72,10 +69,9 @@ Citra and Azahar permit multi-screen custom layouts. See here : https://github.c
 
 ## Frontend
 
-Either **Daijishō** via Obtainium, or **ES-DE** (personal download link sent by email after subscription).  
-I choose **ES-DE**:
+Either **Daijishō** via Obtainium, or **ES-DE** (personal download link sent by email after subscription). I choose **ES-DE**:
 
-- Use [BinaryQuantumSoul/esde_android_apps](https://github.com/BinaryQuantumSoul/esde_android_apps) to import Android apps, games, and emulators into ES-DE.
+- Use [BinaryQuantumSoul/esde_android_apps](https://github.com/BinaryQuantumSoul/esde_android_apps) to display entries for Android apps, games, and emulators into ES-DE.
 - To install, add [https://github.com/schattenphoenix/es_applauncher/releases](https://github.com/schattenphoenix/es_applauncher/releases) to Obtainium.
 
 Set ES-DE as the **default launcher** to improve the "console-like" experience and forget about Android.  
@@ -90,28 +86,20 @@ The [Libretro BIOS documentation](https://docs.libretro.com/library/bios/) lists
 To download these resources, my go-to sources are:
 
 - [RetroPieBIOS](https://github.com/archtaurus/RetroPieBIOS) have most often the right MD5
-- [Abdess' retroarch_system repository](https://github.com/Abdess/retroarch_system)
+- [Abdess' retroarch_system repository](https://github.com/Abdess/retroarch_system) is OK as well
 - A comprehensive **BIOS Batocera Pack** archive, in case something is missing from Abdess’ repo  
   (see for example: [https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm](https://theminicaketv.fr/PACK-BIOS-BATOCERA.htm))
 
-I sync a small custom BIOS pack for RetroArch with **Syncthing** on my external SD card.  
-From there, I copy the necessary files into the internal RPM storage at `/storage/emulated/0/RetroArch/system`
+I'm using Syncthing to sync a folder on my computer with a `BIOS` folder on the external card in my RPM.
 
 ### General configuration
 
 Many guides explain this setup in detail, such as:  
 [RetroArch Starter Guide – Retro Game Corps](https://retrogamecorps.com/2022/02/28/retroarch-starter-guide/)
 
-Setting `vulkan` as the default video driver is the most convenient option overall.  
-However, **no RetroArch core for N64** can run games using Vulkan in their default configuration.  
-This causes a major issue: you won’t be able to launch a game, and therefore won’t be able to access the RA **Quick Menu** to apply a core override — so you cannot set a `gl` override from within RetroArch directly.
+Setting `vulkan` as the default video driver is the most convenient option overall. However, **no RetroArch core for N64** can run games using Vulkan in their default configuration.  This causes an issue: you won’t be able to launch a game, and therefore won’t be able to access the RA **Quick Menu** to apply an override — so you cannot set a `gl` override from within RetroArch directly. It is actually technically possible through the UI, but it requires many steps and restarts.
 
-It is technically possible through the UI, but it requires many steps and restarts.
-
-Since the `config` folder is synced via **Syncthing**, the easiest approach is to manually add an override file to `/storage/emulated/0/RetroArch/config/ParaLLEl N64`.
-
-For a **core override**, name the file `ParaLLEl N64.cfg`
-and include the following content:
+Since the RA `config` folder is synced by **Syncthing**, the easiest way is to manually add an override file to `/storage/emulated/0/RetroArch/config/ParaLLEl N64`. For a **core override**, name the file `ParaLLEl N64.cfg` and include the following content:
 
 ```
 video_driver = "gl"
@@ -119,23 +107,20 @@ video_driver = "gl"
 
 If you prefer to apply a **content directory override**, name the file `n64.cfg`.
 
-**Important: check your directory structure.**  
-I prefer having more of my config folders in `/storage/emulated/0/RetroArch/` rather than in the default scoped storage path `/storage/emulated/0/Android/data/...`
+**Important: check your directory structure.**  I prefer having most of my RA directories in `/storage/emulated/0/RetroArch/` rather than in the default scoped storage path `/storage/emulated/0/Android/data/...`, for easier access if required.
 
 ### Settings saving policy
 
-I save :
-
-- **Scaling** parameters as core overrides, the alternative beeing at the core level in core settings
-- **Shaders** presets as content directory presets because some cores such as Pico Drive emulate platforms of different generations that I prefer to shade differently
-- **Video filters** such as Blargg's as content directory overrides because these are related to shaders
+> - **Scaling** parameters are saved as **core** overrides, the alternative beeing at the core level in core settings
+> - **Shaders** presets atre saved as **content directory** presets because some cores such as Pico Drive emulate platforms of different generations that I prefer to shade differently
+> - **Video filters** such as Blargg's are saved as **content directory** overrides because these are related to shaders
 
 ## RetroArch cores
 
 Everything I can, I emulate using RetroArch cores.  But :
 - I couldn't make the Dolphin core work
 - Performance is better on NetherSX2
-- Standalone emulators are better at setting custum 2 screens layouts, and easier to shade
+- Standalone emulators for DS and 3DS are better at setting custom 2 screen layouts, and OK to LCD shade
 
 | Platform    | Prefered core |
 | -------- | ------- |
@@ -153,28 +138,26 @@ Everything I can, I emulate using RetroArch cores.  But :
 | NGPC | Beetle NeoPop |
 | PC Engine | Beetle PCE |
 | PSX | SwanStation |
-| Saturn | Beetle ? |
+| Saturn | Beetle Saturn |
 | SNES | Snes9x - Current |
 | Vectrex | Vecx |
 
-For Vectrex, overlays are almost mandatory and I'll try to use a pack on [archive.org](https://archive.org/details/moonland_202212) that seems to have good quality ones.
+For Vectrex, overlays are almost mandatory and I'll try to use an [archive.org](https://archive.org/details/moonland_202212) pack that seems to have good quality overlays
 
 ## Scaling in RetroArch
 
 > These settings are highly device-dependent.
 
-Even for 3D games, when the core renders at 2× or more, I strongly dislike how textures, polygon count and lines look imbalanced. So I always let shaders handle the upscaling, and I run all emulators/cores at **1×** internal resolution.
+With 3D games, when the core renders at 2× or higher, I find the visual balance between textures, polygon count, and lines quite off. That’s why I always let shaders handle the upscaling and keep all emulators/cores running at **1×** internal resolution.
 
-The Retroid Pocket Mini is excellent when it comes to scaling options. As a rule of thumb, I prefer a slight overscan crop to maximize object size on screen and ensure clean shader output. And with the RPM, it often translates into integer scaling as the cherry on the cake.
+The Retroid Pocket Mini is excellent when it comes to scaling options. As a rule of thumb, I prefer a slight overscan crop to maximize object size on screen and ensure clean shader output. With the RPM, it also often translates into integer scaling..
 
 For **4:3 systems**, I typically use configurations like the following:  
-[Shaunimman Screen Config](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0).
+[Shaunimman Screen Config](https://shauninman.com/utils/screens/#src_screen:14,src_nn:1,src_crop:1,src_width:320,src_height:240,dst_screen:34,dst_width:1240,dst_height:1080,dst_size:3.92,show_all:0). Smart integer scaling results in tiny overscan on the sides and a very slightly increased height compared to boxed full 4:3.
 
-Smart integer scaling results in tiny overscan on the sides and a very slightly increased height compared to boxed full 4:3.
+For **8:7-like systems**, integer scaling with overscan induces a small amount of overscan crop both vertically and horizontally, which is suitable because since CRTs games were actually developped having in mind an overscan up to ~5% on consumer CRT TVs. See https://www.nesdev.org/wiki/Overscan for instance.
 
-For **8:7-like systems**, integer scaling with overscan induces a small amount of overscan crop both vertically and horizontally, which is suitable and anticipated by developers, since CRTs games were developped with an overscan up to ~5% on consumer CRT TVs.
-
-**PC Engine** mostly used a 256×240 resolution but overscan isn't super welcome here because many games seem to be designed with very little tolerance to overscan. The core mostly requests 4:3 (which seems a bit stretched to my eyes), while a 1:1 pixel aspect ratio leads to very tall images with black pillars. The RPM's display aspect ratio is a good compromise for me, very close to 1:1 PAR though.
+**PC Engine** mostly used a ~256×240 resolution but overscan isn't super welcome here. Indeed, many games seem to be designed with very little tolerance to overscan. The core mostly requests 4:3, which seems a bit stretched to my eyes, while a 1:1 pixel aspect ratio leads to tall images with black pillars. The RPM's display aspect ratio is a good compromise to me, very close to 1:1 PAR though.
 
 For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**.
 
@@ -196,15 +179,13 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 
 ## Shaders
 
-For home consoles, I like CRT shaders.  
-I'm not after fancy or high-fidelity effects, but rather:
+> For home consoles, I like CRT shaders.  I'm not after fancy or high-fidelity effects, but rather:
+> - Considering a CRT shader as a specialized and effective way to perform interpolation  
+> - Getting more colors and better gradients out of the limited 8-bit and 16-bit palettes  
+> - Helping with de-dithering for 8-bit and 16-bit games  
+> - Giving a bit more "organic" feel rather than flat, clinical square pixels
 
-- Considering a CRT shader as a specialized and effective way to perform interpolation  
-- Getting more colors and better gradients out of the limited 8-bit and 16-bit palettes  
-- Helping with de-dithering for 8-bit and 16-bit games  
-- Giving a bit more "organic" feel rather than flat, clinical square pixels
-
-So in any shader I mention, I remove curvature and vignetting.
+In any shader I mention, I remove curvature and vignetting.
 
 ### Dolphin
 
