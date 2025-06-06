@@ -295,7 +295,7 @@ The corner size of the shader is about the same size of the rounded corner of th
 
 For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than by blurring everything under super heavy composite stuff.
 
-> In addition to this shader settings, it is possible to feel more nostalgic by using **video filters** (saved as content directory overrides). I would try :
+> In addition to this shader settings, it is possible to feel more nostalgic by using **video filters (CPU)** (saved as content directory overrides). I would try :
 > - An RC Blargg filter for 8 bits
 > - Composite for 16 bits
 > - RGB or nothing for 32+ bits 
