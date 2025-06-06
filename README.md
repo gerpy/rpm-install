@@ -1,6 +1,6 @@
 # Install notes for the Retroid Pocket Mini handheld console
 
-> There are meny general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
+> There are many general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
 > The present notes are personnal and reflect my own tastes. I don't rewrite everything out there but rather focus on topics which obvioulsy require too much time for content creators in a permanent rush, such as scaling or shaders with the attention they deserve).
 
 When starting the RPM for the first time, don't install anything and set the Android AOSP launcher as the default.
