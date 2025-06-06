@@ -19,17 +19,14 @@ I have an "Emulation" folder on my hard drive, with various resources. I'm using
 
 My typical main shares are the following (see the following sections for some details):
 
-- **BIOS - Platforms** (files sorted by platform, as an archive) →  `/storage/7AE4-BF10/BIOS/Plateforms`  
-  (where `7AE4-BF10` is my external SD card ID) — used as a large reference archive
-- **BIOS - RetroArch** (same content but filtered and flattened) →  `/storage/7AE4-BF10/BIOS/RetroArch`  
-  This is an unaltered archive (not my RetroArch system folder because RA adds many files to it)
-- **ROMs sorted according to the ES-DE folder naming scheme** →  `/storage/7AE4-BF10/ROMs`  
+- **BIOS - RetroArch system** →  `/storage/7AE4-BF10/BIOS` (where `7AE4-BF10` is my external SD card ID)
+- **ROMs** sorted according to the ES-DE folder naming scheme →  `/storage/7AE4-BF10/ROMs`  
   with exclusions (see below)
-- **Shared folder** for APKs (e.g., Obtainium, NetherSX2) and drivers (e.g., Turnip) to have them available on the device for initial setup →  `/storage/7AE4-BF10/Synchronisation/Shared`
-- **Dolphin shaders** →  `/storage/emulated/0/Android/data/org.dolphinemu.dolphinemu/files/Shaders`
+- **Shared folder** for stuff loke APKs (e.g., Obtainium, NetherSX2) or drivers (e.g., Turnip) to have them available on the device for initial setup →  `/storage/7AE4-BF10/Share`
 - **RetroArch config folder** →  `/storage/emulated/0/RetroArch/config`
+- **System screenshots** →  `/storage/emulated/0/Pictures/Screenshots`
 - **RetroArch overlays for Vectrex** →  `/storage/emulated/0/RetroArch/overlays/vecx`
-- **Screenshots** →  `/storage/emulated/0/Pictures/Screenshots`
+- **Dolphin shaders** →  `/storage/emulated/0/Android/data/org.dolphinemu.dolphinemu/files/Shaders`
 
 Syncthing offers the possibility to filter what gets synced in a shared folder. It's particularly useful for ROMs. I don't sync 16:9 systems to my RPM, so I've defined the following exclusions for the ROMs sync:
 
