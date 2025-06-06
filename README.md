@@ -192,6 +192,7 @@ For NDS and 3DS, custom layouts are a good way to control how both screens scale
 So as to setup a custom layout for Citra MMJ, it is necessary to edit the `[Layout]` section of the `/storage/emulated/0/Citra-emu/config/config-mmj.ini` file. The following settings display the top screen with a 3x integer scaling on top of a smaller 1.5x bottom screen.
 
 ```
+[Layout]
 landscape_custom_layout = True
 landscape_top_left=20
 landscape_top_top=0
