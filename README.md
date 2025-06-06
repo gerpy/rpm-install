@@ -179,70 +179,57 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 
 ## Shaders
 
-> For home consoles, I like CRT shaders.  I'm not after fancy or high-fidelity effects, but rather:
+> For home consoles, I like CRT shaders but I'm not after fancy or high-fidelity effects. I'm just after the general mood by:
 > - Considering a CRT shader as a specialized and effective way to perform interpolation  
 > - Getting more colors and better gradients out of the limited 8-bit and 16-bit palettes  
 > - Helping with de-dithering for 8-bit and 16-bit games  
 > - Giving a bit more "organic" feel rather than flat, clinical square pixels
 
-In any shader I mention, I remove curvature and vignetting.
-
 ### Dolphin
 
 Built-in shaders don't help much. Clownacy has ported GLSL shaders for the standalone Dolphin emulator:  
-https://clownacy.wordpress.com/2023/06/30/porting-crt-shaders-from-retroarch-to-dolphin/
+https://clownacy.wordpress.com/2023/06/30/porting-crt-shaders-from-retroarch-to-dolphin/. The latest versions are found in this repo: https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/Shaders/.
 
-The latest versions are found in this repo:  
-https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/Shaders
+The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`. They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the parameters tweaking feature as on Windows. Therefore, the shaders need manual edits of default values for optimal rendering.
 
-The shaders are `crt-pi.glsl` and `crt-lottes-fast.glsl`. They are supposed to expose parameters to the Dolphin UI, but Dolphin on Android lacks the parameters tweaking feature as on Windows. Therefore, the shaders need manual tweak edits for optimal rendering:
-
-- Scanlines produce a lot of moiré/banding artifacts on the RPM, to the point that the shaders become unusable  
-- There shouldn't be visible scanlines at all for GameCube 480p content
-
-To remove scanlines as well as curvature, the shaders need to be modified in an editor by changing their default values. These are modified **`crt-lottes-fast.glsl`** :
+Scanlines produce a lot of moiré/banding artifacts on the RPM, to the point that the shaders become unusable. There shouldn't be visible scanlines at all for GameCube 480p content. To remove scanlines as well as curvature, the shaders need to be modified in an editor by changing their default values. These are modified **`crt-lottes-fast.glsl`** :
 
 - With **mask #1** (aperture grille) : [crt_lottes_fast_mask1.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask1.glsl)
 
 - With **mask #2** (shadow mask) : [crt_lottes_fast_mask3.glsl](https://github.com/gerpy/rpm-install/blob/main/Dolphin%20Shaders/crt_lottes_fast_mask3.glsl)
 
-Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  I chose **mask #2** here.
-
-The `crt-pi.glsl` mask is just an aperture grille with scanlines, without added value over `crt-lottes-fast.glsl` IMO.
+Shadow masks do a better job at smoothing, in my understanding. Aperture grilles produce a sharper image.  I chose **mask #2** here. The `crt-pi.glsl` mask is just an aperture grille with scanlines, without added value over `crt-lottes-fast.glsl` IMO.
 
 ### NetherSX2
 
-The built-in Triangle and Lottes shaders scale well. Others produce banding/moiré artifacts.  
-I choose **Lottes**, which resembles Dolphin's mask #2.
+The built-in Triangle and Lottes shaders scale well. Others produce banding/moiré artifacts. I choose **Lottes**, which resembles Dolphin's mask #2.
 
 ### RetroArch
 
 #### Home consoles (CRT)
 
-The following CRT shader configs is saved as my **global preset**. Specific configurations (such as Megadrive) come as **content directory presets**. If I want to make a system look more dirty, I use **content directories overrides** with Blargg filters and and I let shaders as it. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
+The following main CRT shader config is saved as my **global preset**. Specific configurations (such as Megadrive) come as **content directory presets**. If I want to make a system look more retro, I use **content directories overrides** with Blargg filters but I let the shaders as they are. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
 
-I'm looking for masks that:
+More than just scanlines, I'm looking for masks that:
 
 - Are tweakable, allowing a choice between shadow masks and aperture grilles  
 - Are robust *with respect to* non-integer scalings  
-- Are available in both **SLANG** and **GLSL** to unify systems on my RPM (especially for N64)  
-- Have a clean look without vignetting or curvature  
-- Are not too complicated to configure (`guest` is far beyond my understanding)
+- Are available in both `SLANG` and `GLSL` to unify platform rendering on my RPM (especially for N64)  
+- Have a look on the clean side, without vignetting or curvature  
+- Are not too complicated to configure (`guest` is typically far beyond my understanding)
 
 I love the rendering of `crt-gdv-mini-ultra-trinitron` for the way it adds depth to pixels, but it performs poorly when not integer-scaled (tested on 5 different horizontal and vertical scalings with systems such as NeoGeo and CPS1).  
 
-The best I could find is **`crt-easymode-halation`**, which is on the same clean side as the shaders used by Dolphin and NetherSX2. The author discusses configuration here: https://forums.libretro.com/t/configuring-crt-easymode/3384
+The best I could find is **`crt-easymode-halation`**, which is inline with the clean shaders used by Dolphin and NetherSX2. The author discusses configuration here: https://forums.libretro.com/t/configuring-crt-easymode/3384, for reference.
 
-My experiments show that when scalings are combined with different mask types, not every mask is robust to non-integer scaling. Avoid masks **#4**, **#5**, and **#7**.  
-The remaining masks are:
+My **`crt-easymode-halation`** experiments show that, when scanlines are combined with mask, not every mask type is robust to non-integer scaling. Avoid masks **#4**, **#5**, and **#7**.  The remaining masks are:
 
 - **#1** for a 2-color aperture grille  
 - **#2** for a 3-color aperture grille  
 - **#3** for a 2-color shadow mask  
 - **#6** for a 3-color shadow mask
 
-I choose **#2** or **#6** depending on the system:
-
+I keep **#2** or **#6** :
 - **#2** when I want sharpness (typically NeoGeo)  
 - **#6** when I want to smooth things out a bit more (typically PS1)
 
@@ -271,20 +258,20 @@ My default settings for **`crt-easymode-halation`** are :
 | Diffusion | 0.00 |
 | Brightness | 1.00 |
 
-The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a unified look with 4:3 boxed content and full screen oversize cropped.
+The corner size of the shader is about the same size of the rounded corner of the physical RPM screen. It permits to get a more unified look with 4:3 boxed content.
 
-For **Megadrive**, due to the super heavy use of dithering to overcome the only 61 simultaneous color display. So I prepend a **`jinc2-dedither`** pass, which arguably produces way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than by blurring everything under super heavy composite stuff.
+For **Megadrive**, due to the super heavy use of dithering to overcome the low 61 simultaneous color display, I prepend a **`jinc2-dedither`** pass, which arguably produce way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than blurring everything under heavy RC/composite stuff.
 
-> In addition to this shader settings, it is possible to feel more nostalgic by using **video filters (CPU)** (saved as content directory overrides). I would try :
+> In addition to this shader settings, it is possible to add nostalgy by using **video filters (CPU)** (saved as content directory overrides). I would try :
 > - An RC Blargg filter for 8 bits
 > - Composite for 16 bits
 > - RGB or nothing for 32+ bits 
 
 #### Handheld consoles
 
-As much I like the `dot-matrix` serie of shaders, they appeared buggy at the time of install : missing gridlines for GBA, and unexppected blacklines top and down after closing content and starting again.
+As much I like the `dot-matrix` serie of shaders, they appeared buggy at the time of my install, with blacklines top and down after closing content and starting again.
 
-So I've chosen **`simpletex_lcd`** for GB(C) with a slightly darkened grid for GBC (not to let white areas empty with just the background texture). For GB, prepening **`gb-palette-pocket`** makes it unnecessary and provides a retro vibe. Neo.Geo Pocket Color is setup as GBC. For GBA, **`gameboy-advance-dot-matrix`** is just fine.
+So I've chosen **`simpletex_lcd`** for GB(C) with a slightly darkened grid for GBC (not to let white areas empty with just the background texture). For GB, prepening **`gb-palette-pocket`** makes it unnecessary and provides a retro vibe. Neo.Geo Pocket Color is setup as GBC. For GBA, **`gameboy-advance-dot-matrix`** is just fine as long as integer scaling is used.
 
 | Platform | Shader | Settings |
 | -------- | ------- | ------- |
