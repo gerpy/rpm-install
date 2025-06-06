@@ -49,7 +49,7 @@ systems.txt
 Use **Obtainium** with [Obtainium-Emulation-Pack](https://github.com/RJNY/Obtainium-Emulation-Pack) to install emulators:
 
 - **RetroArch** (nightly)
-- **Azahar** (requires renaming of the `.3ds` files)
+- **Citra MMJ** from https://github.com/weihuoya/citra/releases because I couldn't get a LCD shader with Azahar or Lime3DS
 - **Dolphin**, because I couldn't get the RetroArch core to work
 - **MelonDS**
 
