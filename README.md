@@ -144,6 +144,8 @@ Everything I can, I emulate using RetroArch cores.  But :
 
 For Vectrex, overlays are almost mandatory and I'll try to use an [archive.org](https://archive.org/details/moonland_202212) pack that seems to have good quality overlays
 
+---
+
 ## Scaling in RetroArch
 
 > These settings are highly device-dependent.
@@ -178,6 +180,28 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | Gambatte | Smart Integer scale X+Y, 1:1 PAR |
 | mGBA | Smart Integer scale X+Y, 1:1 PAR |
 | Beetle NeoPop | Smart Integer scale X+Y, 1:1 PAR |
+
+---
+
+## Multi-screen layouts
+
+For NDS and 3DS, custom layouts are a good way to control how both screens scale to ensure good looking grid shaders.
+
+### Citra MMJ
+
+So as to setup a custom layout for Citra MMJ, it is necessary to edit the `[Layout]` section of the `/storage/emulated/0/Citra-emu/config/config-mmj.ini` file. The following settings display the top screen with a 3x integer scaling on top of a smaller 1.5x bottom screen.
+
+```
+landscape_custom_layout = True
+landscape_top_left=20
+landscape_top_top=0
+landscape_top_right=1220
+landscape_top_bottom=720
+landscape_bottom_left=380
+landscape_bottom_top=720
+landscape_bottom_right=860
+landscape_bottom_bottom=1080
+```
 
 ---
 
