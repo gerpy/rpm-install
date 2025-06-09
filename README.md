@@ -358,7 +358,7 @@ video_scale_integer_axis = "1"
 video_scale_integer_scaling = "1"
 ```
 
-but the ```config\PicoDrive\mastersystem.cfg``` looks like the following. The last 3 lines beeing already in the more general and highr priority ```config\PicoDrive\PicoDrive.cfg```, they can safely be removed in you choice editor.
+but the ```config\PicoDrive\mastersystem.cfg``` looks like the following. The last 3 lines beeing already in the more general ```config\PicoDrive\PicoDrive.cfg```, they can safely be removed with a text editor.
 
 ```
 video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_S-Video.filt"
@@ -375,10 +375,5 @@ video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNE
 video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_S-Video.filt"
 video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_RGB.filt"
 ```
-
-
-
-
-
 
 
