@@ -336,10 +336,12 @@ In addition, I use filters to simulate how the video signal is transmitted to th
 | Filter | Platform |
 | -------- | ------- |
 | ```Blargg_NTSC_SNES_RF```          | C64, Atari 2600 and such |
-| ```Blargg_NTSC_SNES_Composite```   | Amiga, NES, Master System, Megadrive |
+| ```Blargg_NTSC_SNES_Composite```   | NES, Master System |
 | ```Blargg_NTSC_SNES_S-Video```     | PC Engine, SNES, PSX, Saturn, N64, CPS1, general Arcade |
-| ```Blargg_NTSC_SNES_RGB```         | Dreamcast, NeoGeo, CPS2, CPS3 |
-| ```OFF```                          | Vectrex |
+| ```Blargg_NTSC_SNES_RGB```         | Dreamcast, NeoGeo, CPS2 |
+| ```Blargg_NTSC_SNES_Custom_pseudo_Amiga.filt``` | Amiga because the regular ones half the display |
+| ```Blargg_NTSC_SNES_Custom_pseudo_MD_S-Video``` | Megadrive same reason |
+| ```OFF```                          | Vectrex,  CPS3 |
 
 
 To define content directory overrides, I personally find easier to directly add ```platform.cfg``` files with a one line content among the following, or just add the line if the files have already been created for a scaling purpose.
