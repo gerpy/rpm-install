@@ -337,7 +337,7 @@ In addition, I use filters to simulate how the video signal is transmitted to th
 | -------- | ------- |
 | ```Blargg_NTSC_SNES_RF```          | C64, Atari 2600 and such |
 | ```Blargg_NTSC_SNES_Composite```   | Amiga, NES, Master System, Megadrive |
-| ```Blargg_NTSC_SNES_S-Video```     | PC Engine, SNES, PS, Saturn, N64, CPS1, general Arcade |
+| ```Blargg_NTSC_SNES_S-Video```     | PC Engine, SNES, PSX, Saturn, N64, CPS1, general Arcade |
 | ```Blargg_NTSC_SNES_RGB```         | Dreamcast, NeoGeo, CPS2, CPS3 |
 | ```OFF```                          | Vectrex |
 
