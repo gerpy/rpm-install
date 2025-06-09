@@ -179,9 +179,9 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | N64 | Smart Y Integer Scaling, Core provided AR |
 | Dreamcast | Smart Y Integer Scaling, Core provided AR |
 | PC Engine | Non integer, Full |
-| GB and GBC | Smart X+Y Integer Scaling, 1:1 PAR |
-| GBA | Smart X+Y Integer Scaling, 1:1 PAR |
-| NeoGeo Pocket Color | Smart X+Y Integer Scaling, 1:1 PAR |
+| GB and GBC | Smart Y+X Integer Scaling, 1:1 PAR |
+| GBA | Smart Y+X Integer Scaling, 1:1 PAR |
+| NeoGeo Pocket Color | Smart Y+X Integer Scaling, 1:1 PAR |
 
 ---
 
