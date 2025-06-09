@@ -168,19 +168,17 @@ For **8:7-like systems**, integer scaling with overscan induces a small amount o
 
 For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**, just like default.
 
-> A few errors just below. WIP. Recheck.
-
 | Platform    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, Core provided AR, Crop Overscan |
-| NES | Integer Overscale Y+X, 1:1 PAR |
-| Mastersystem | Integer Overscale Y+X, 1:1 PAR |
-| Megadrive | Integer Overscale Y+X, 1:1 PAR |
-| SNES | Integer Overscale Y+X, 1:1 PAR |
-| PSX | Integer Overscale Y+X, Core provided AR |
-| N64 | Integer Overscale Y, Core provided AR |
-| Dreamcast | Smart Integer scale X+Y, Core provided AR |
-| PC Engine | Non integer, Full, Crop Overscan |
+| NES | Smart Y Integer Scaling, 1:1 PAR |
+| Mastersystem | Smart Y Integer Scaling, 1:1 PAR |
+| Megadrive | Smart Y Integer Scaling, 1:1 PAR |
+| SNES | Smart Y Integer Scaling, 1:1 PAR |
+| PSX | Smart Y Integer Scaling, Core provided AR |
+| N64 | Smart Y Integer Scaling, Core provided AR |
+| Dreamcast | Smart Y Integer Scaling, Core provided AR |
+| PC Engine | Non integer, Full |
 | GB and GBC | Smart Integer scale X+Y, 1:1 PAR |
 | GBA | Smart Integer scale X+Y, 1:1 PAR |
 | NeoGeo Pocket Color | Smart Integer scale X+Y, 1:1 PAR |
