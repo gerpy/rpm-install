@@ -335,32 +335,14 @@ In addition, I use filters to simulate how the video signal is transmitted to th
 
 | Filter | Platform |
 | -------- | ------- |
-| Blargg_NTSC_SNES_RF          | C64, Atari 2600 and such |
-| Blargg_NTSC_SNES_Composite   | Amiga, NES, MasterSystem, Megadrive |
-| Blargg_NTSC_SNES_S-Video     | PC-Engine, SNES, PS, Saturn, N64, CPS1, general Arcade |
-| Blargg_NTSC_SNES_RGB         | Dreamcast, NeoGeo, CPS2, CPS3 |
-| OFF                          | Vectrex |
+| ```Blargg_NTSC_SNES_RF```          | C64, Atari 2600 and such |
+| ```Blargg_NTSC_SNES_Composite```   | Amiga, NES, Master System, Megadrive |
+| ```Blargg_NTSC_SNES_S-Video```     | PC Engine, SNES, PS, Saturn, N64, CPS1, general Arcade |
+| ```Blargg_NTSC_SNES_RGB```         | Dreamcast, NeoGeo, CPS2, CPS3 |
+| ```OFF```                          | Vectrex |
 
-It appears that when you store a **content directory override** while a **core override** is already present in the ```config\Core``` folder, then all the information in the **core override** is repeated. It can be an issue when multiple platforms are emulated by the same emulator that you scale the same (Picodrive, FBN) but want a different signal degradation along with the shader of choice for that particuluar platform.
 
-For instance, the ```config\PicoDrive\PicoDrive.cfg``` has the following content :
-
-```
-video_scale_integer = "true"
-video_scale_integer_axis = "1"
-video_scale_integer_scaling = "1"
-```
-
-but the ```config\PicoDrive\mastersystem.cfg``` looks like the following. The last 3 lines beeing already in the more general ```config\PicoDrive\PicoDrive.cfg```, they can safely be removed with a text editor.
-
-```
-video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_S-Video.filt"
-video_scale_integer = "true"
-video_scale_integer_axis = "1"
-video_scale_integer_scaling = "1"
-```
-
-To define content directory overrides, I personally find easier to directly add ```platform.cfg``` files with a one line content among the following.
+To define content directory overrides, I personally find easier to directly add ```platform.cfg``` files with a one line content among the following, or just add the line if the files have already been created for a scaling purpose.
 
 ```
 video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_RF.filt"
