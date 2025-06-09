@@ -116,8 +116,8 @@ If you prefer to apply a **content directory override**, name the file `n64.cfg`
 
 ### Settings saving policy
 
-> - **Scaling** parameters are saved as **core** overrides, the alternative beeing at the core level in core settings
-> - **Shaders** presets atre saved as **content directory** presets because some cores such as Pico Drive emulate platforms of different generations that I prefer to shade differently
+> - **Scaling** parameters are saved as **content directory** overrides, the alternative beeing at the core level in core settings
+> - **Shaders** presets atre saved as **content directory** presets because some cores such as Gambatte emulate multiple platforms that I want to shade differently
 > - **Video filters** such as Blargg's are saved as **content directory** overrides because these are related to shaders
 
 ## RetroArch cores
@@ -166,23 +166,24 @@ For **8:7-like systems**, integer scaling with overscan induces a small amount o
 
 **PC Engine** mostly used a ~256×240 resolution but overscan isn't super welcome here. Indeed, many games seem to be designed with very little tolerance to overscan. The core mostly requests 4:3, which seems a bit stretched to my eyes, while a 1:1 pixel aspect ratio leads to tall images with black pillars. The RPM's display aspect ratio is a good compromise to me, very close to 1:1 PAR though.
 
-For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**.
+For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcade platforms, I allow **non-integer scaling** with the **core-provided aspect ratio**, just like default.
 
-> A few errors just below. WIP
+> A few errors just below. WIP. Recheck.
 
-| Core    | Settings > Video > Scaling options |
+| Platform    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, Core provided AR, Crop Overscan |
-| Nestopia | Integer Overscale Y+X, 1:1 PAR |
-| PicoDrive | Integer Overscale Y+X, 1:1 PAR |
-| Snes9x | Integer Overscale Y+X, 1:1 PAR |
-| SwanStation | Integer Overscale Y+X, Core provided AR |
-| ParaLLEl | Integer Overscale Y, Core provided AR |
-| Flycast | Smart Integer scale X+Y, Core provided AR |
-| Beetle PCE | Non integer, Full, Crop Overscan |
-| Gambatte | Smart Integer scale X+Y, 1:1 PAR |
-| mGBA | Smart Integer scale X+Y, 1:1 PAR |
-| Beetle NeoPop | Smart Integer scale X+Y, 1:1 PAR |
+| NES | Integer Overscale Y+X, 1:1 PAR |
+| Mastersystem | Integer Overscale Y+X, 1:1 PAR |
+| Megadrive | Integer Overscale Y+X, 1:1 PAR |
+| SNES | Integer Overscale Y+X, 1:1 PAR |
+| PSX | Integer Overscale Y+X, Core provided AR |
+| N64 | Integer Overscale Y, Core provided AR |
+| Dreamcast | Smart Integer scale X+Y, Core provided AR |
+| PC Engine | Non integer, Full, Crop Overscan |
+| GB and GBC | Smart Integer scale X+Y, 1:1 PAR |
+| GBA | Smart Integer scale X+Y, 1:1 PAR |
+| NeoGeo Pocket Color | Smart Integer scale X+Y, 1:1 PAR |
 
 ---
 
@@ -272,7 +273,7 @@ These settings are saved as **content directory settings**.
 > - Helping with de-dithering for 8-bit and 16-bit games  
 > - Giving a bit more "organic" feel rather than flat, clinical square pixels
 
-The following main CRT shader config is saved as my **global preset**. Specific configurations (such as Megadrive) come as **content directory presets**. If I want to make a system look more retro, I use **content directories overrides** with Blargg filters but I let the shaders as they are. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
+The following main CRT shader config is saved as my **global preset**. Specific configurations (such as Megadrive with a dedither path) come as **content directory presets**.
 
 More than just scanlines, I'm looking for masks that:
 
@@ -326,14 +327,11 @@ The corner size of the shader is about the same size of the rounded corner of th
 
 For **Megadrive**, due to the super heavy use of dithering to overcome the low 61 simultaneous color display, I prepend a **`jinc2-dedither`** pass, which arguably produce way less artifacts than **`mdapt`** (on text in particular). It is kind of heretic but it helps preserving better details than blurring everything under heavy RC/composite stuff.
 
-> In addition to this shader settings, it is possible to add nostalgy by using **video filters (CPU)** (saved as content directory overrides). I would try :
-> - An RC Blargg filter for 8 bits
-> - Composite for 16 bits
-> - RGB or nothing for 32+ bits
-
 ### Filters
 
-Not really saders, but let's put this section here as filters are closely related to proper shaders I stored them as **content directory overrides** and not core overrides. Shaders above are used to evocate how a CRT screen displays things (with a mask, scanlines, glows and such). I use filters to simulate how the video signal is transmitted to the screen, with more or less degradation, assuming *RF < Composite < S-Video < RGB < Perfect (no filter)*. I'm using the following filters in Settings > Video Filter. I beleive that there are ways to fine tune everything but I keep it basic.
+Not really saders, but let's put this section here as filters are closely related to proper shaders I stored them as **content directory overrides**. Thus they get stored in the same configuration files as platform scaling settings. The shaders above are meant to evocate how a phosphore CRT screen displays things (with a mask, scanlines, glow and such).
+
+In addition, I use filters to simulate how the video signal is transmitted to the screen, with more or less degradation, assuming *RF < Composite < S-Video < RGB < Perfect (no filter)*. I'm using the following filters in Settings > Video Filter. I beleive that there are ways to fine tune everything but I keep it basic.
 
 | Filter | Platform |
 | -------- | ------- |
