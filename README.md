@@ -329,7 +329,7 @@ For **Megadrive**, due to the super heavy use of dithering to overcome the low 6
 
 ### Filters
 
-Not really saders, but let's put this section here as filters are closely related to proper shaders I stored them as **content directory overrides**. Thus they get stored in the same configuration files as platform scaling settings. The shaders above are meant to evocate how a phosphore CRT screen displays things (with a mask, scanlines, glow and such).
+Not really shaders, but let's put this section here as filters are closely related to proper shaders I stored them as **content directory overrides**. Thus they get stored in the same configuration files as platform scaling settings. The shaders above are meant to evocate how a phosphore CRT screen displays things (with a mask, scanlines, glow and such).
 
 In addition, I use filters to simulate how the video signal is transmitted to the screen, with more or less degradation, assuming *RF < Composite < S-Video < RGB < Perfect (no filter)*. I'm using the following filters in Settings > Video Filter. I beleive that there are ways to fine tune everything but I keep it basic.
 
