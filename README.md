@@ -2,6 +2,7 @@
 
 > There are many general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
 > The present notes are personnal and reflect my own tastes. I don't rewrite everything out there but rather focus on topics which obvioulsy require too much time for content creators in a permanent rush, such as scaling or shaders with the attention they deserve).
+> At the end, the overall system is very **unified** over emulated platforms, with the generalisation of not fancy yet effective LCD and CRT shaders, custom dual-screen layouts and optimal scaling regarding the RPM screen. No offense and I get the point of a content creator wanting to show different possibilities, but settings such as in https://www.youtube.com/watch?v=DqoQ-O_RKLc are all over the place and I'm way too picky to tolerate such inconsistencies in rendering. 
 
 ---
 
@@ -51,8 +52,8 @@ systems.txt
 Use **Obtainium** with [Obtainium-Emulation-Pack](https://github.com/RJNY/Obtainium-Emulation-Pack) to install emulators:
 
 - **RetroArch** (nightly)
-- **Citra MMJ** from https://github.com/weihuoya/citra/releases because I couldn't get a LCD shader with Azahar or Lime3DS
-- **Dolphin**, because I couldn't get the RetroArch core to work
+- **Citra MMJ** from https://github.com/weihuoya/citra/releases because I couldn't get a LCD shader with Azahar or Lime3DS, and the RA cores don't offer custom layouts
+- **Dolphin**, because I couldn't get the RetroArch core to work and there was is solution for a decent CRT shader (see below)
 - **MelonDS**
 
 ### PS2 emulation:
