@@ -342,7 +342,7 @@ Not really saders, but let's put this section here as filters are closely relate
 
 | Filter | Platform |
 | -------- | ------- |
-| Blargg_NTSC_SNES_RF          |  |
+| Blargg_NTSC_SNES_RF          | C64, Atari 2600 and such |
 | Blargg_NTSC_SNES_Composite   | Amiga, NES, MasterSystem, Megadrive |
 | Blargg_NTSC_SNES_S-Video     | PC-Engine, SNES, PS, Saturn, N64, CPS1, general Arcade |
 | Blargg_NTSC_SNES_RGB         | Dreamcast, NeoGeo, CPS2, CPS3 |
