@@ -172,13 +172,11 @@ For systems with **unusual pixel aspect ratios** like CPS, NeoGeo, or many arcad
 | Core    | Settings > Video > Scaling options |
 | -------- | ------- |
 | Default | Non integer, Core provided AR, Crop Overscan |
-| Nestopia | Smart Integer scale X+Y, 1:1 PAR |
-| PicoDrive | Smart Integer scale X+Y, 1:1 PAR |
-| Snes9x | Smart Integer scale X+Y, 1:1 PAR |
-| Virtual Jaguar | Smart Integer scale X+Y, Core provided AR |
-| SwanStation | Smart Integer scale Y, Core provided AR |
-| ParaLLEl | Smart Integer scale Y, Core provided AR |
-| Beetle Saturn | Smart Integer scale X+Y, 1:1 PAR |
+| Nestopia | Integer Overscale Y+X, 1:1 PAR |
+| PicoDrive | Integer Overscale Y+X, 1:1 PAR |
+| Snes9x | Integer Overscale Y+X, 1:1 PAR |
+| SwanStation | Integer Overscale Y+X, Core provided AR |
+| ParaLLEl | Integer Overscale Y, Core provided AR |
 | Flycast | Smart Integer scale X+Y, Core provided AR |
 | Beetle PCE | Non integer, Full, Crop Overscan |
 | Gambatte | Smart Integer scale X+Y, 1:1 PAR |
@@ -215,7 +213,7 @@ I was not able to find the config files so I was left with the touchscreen to tr
 
 ---
 
-## Shaders
+## Shaders for standalone emularors
 
 > For home consoles, I like CRT shaders but I'm not after fancy or high-fidelity effects. I'm just after the general mood by:
 > - Considering a CRT shader as a specialized and effective way to perform interpolation  
@@ -250,9 +248,34 @@ The built-in **`Dots`** postprocessing video shader is a decent LCD shader.
 
 There is a built-in **`LCD`** postprocessing video shader.
 
-### RetroArch
+---
 
-#### Home consoles (CRT)
+## RetroArch shaders
+
+### Handheld consoles
+
+As much I like the `dot-matrix` serie of shaders, they appeared buggy at the time of my install, with blacklines top and down after closing content and starting again.
+
+So I've chosen **`simpletex_lcd`** for GB(C) with a slightly darkened grid for GBC (not to let white areas empty with just the background texture). For GB, prepening **`gb-palette-pocket`** makes it unnecessary and provides a retro vibe. Neo.Geo Pocket Color is setup as GBC. For GBA, **`gameboy-advance-dot-matrix`** is just fine as long as integer scaling is used.
+
+| Platform | Shader | Settings |
+| -------- | ------- | ------- |
+| Gameboy | `gb-palette-pocket` + `simpletex_lcd` | `Darken Colours = 0.00` |
+| Gameboy Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
+| NeoGeo Pocket Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
+| GB Advance | `gameboy-advance-dot-matrix` | Default |
+
+These settings are saved as **content directory settings**.
+
+### Home consoles (CRT)
+
+#### Shaders
+
+> For home consoles, I like CRT shaders but I'm not after fancy or high-fidelity effects. I'm just after the general mood by:
+> - Considering a CRT shader as a specialized and effective way to perform interpolation  
+> - Getting more colors and better gradients out of the limited 8-bit and 16-bit palettes  
+> - Helping with de-dithering for 8-bit and 16-bit games  
+> - Giving a bit more "organic" feel rather than flat, clinical square pixels
 
 The following main CRT shader config is saved as my **global preset**. Specific configurations (such as Megadrive) come as **content directory presets**. If I want to make a system look more retro, I use **content directories overrides** with Blargg filters but I let the shaders as they are. Remember that scaling options were saved as **core directories overrides** so every aspect is independant from the other, which is simpler IMO.
 
@@ -299,7 +322,7 @@ My default settings for **`crt-easymode-halation`** are :
 | Geom Warp | 0.00 |
 | Geom Corner Size | 0.02 |
 | Geom Corner Smooth | 1000.00 |
-| Interlacing Toggle | 1.00 |
+| Interlacing Toggle | 0.00 for Dreamcast at least |
 | Halation | 0.07 |
 | Diffusion | 0.00 |
 | Brightness | 1.00 |
@@ -311,19 +334,51 @@ For **Megadrive**, due to the super heavy use of dithering to overcome the low 6
 > In addition to this shader settings, it is possible to add nostalgy by using **video filters (CPU)** (saved as content directory overrides). I would try :
 > - An RC Blargg filter for 8 bits
 > - Composite for 16 bits
-> - RGB or nothing for 32+ bits 
+> - RGB or nothing for 32+ bits
 
-#### Handheld consoles
+### Filters
 
-As much I like the `dot-matrix` serie of shaders, they appeared buggy at the time of my install, with blacklines top and down after closing content and starting again.
+Not really saders, but let's put this section here as filters are closely related to proper shaders I stored them as **content directory overrides** and not core overrides. Shaders above are used to evocate how a CRT screen displays things (with a mask, scanlines, glows and such). I use filters to simulate how the video signal is transmitted to the screen, with more or less degradation, assuming *RF < Composite < S-Video < RGB < Perfect (no filter)*. I'm using the following filters in Settings > Video Filter. I beleive that there are ways to fine tune everything but I keep it basic.
 
-So I've chosen **`simpletex_lcd`** for GB(C) with a slightly darkened grid for GBC (not to let white areas empty with just the background texture). For GB, prepening **`gb-palette-pocket`** makes it unnecessary and provides a retro vibe. Neo.Geo Pocket Color is setup as GBC. For GBA, **`gameboy-advance-dot-matrix`** is just fine as long as integer scaling is used.
+| Filter | Platform |
+| -------- | ------- |
+| Blargg_NTSC_SNES_RF          |  |
+| Blargg_NTSC_SNES_Composite   | Amiga, NES, MasterSystem, Megadrive |
+| Blargg_NTSC_SNES_S-Video     | PC-Engine, SNES, PS, Saturn, N64, CPS1, general Arcade |
+| Blargg_NTSC_SNES_RGB         | Dreamcast, NeoGeo, CPS2, CPS3 |
+| OFF                          | Vectrex |
 
-| Platform | Shader | Settings |
-| -------- | ------- | ------- |
-| Gameboy | `gb-palette-pocket` + `simpletex_lcd` | `Darken Colours = 0.00` |
-| Gameboy Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
-| NeoGeo Pocket Color | `simpletex_lcd` | `Darken Colours = 0.0` and `Darken Grid = 0.20` |
-| GB Advance | `gameboy-advance-dot-matrix` | Default |
+It appears that when you store a **content directory override** while a **core override** is already present in the ```config\Core``` folder, then all the information in the **core override** is repeated. It can be an issue when multiple platforms are emulated by the same emulator that you scale the same (Picodrive, FBN) but want a different signal degradation along with the shader of choice for that particuluar platform.
 
-These settings are saved as **content directory settings**.
+For instance, the ```config\PicoDrive\PicoDrive.cfg``` has the following content :
+
+```
+video_scale_integer = "true"
+video_scale_integer_axis = "1"
+video_scale_integer_scaling = "1"
+```
+
+but the ```config\PicoDrive\mastersystem.cfg``` looks like the following. The last 3 lines beeing already in the more general and highr priority ```config\PicoDrive\PicoDrive.cfg```, they can safely be removed in you choice editor.
+
+```
+video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_S-Video.filt"
+video_scale_integer = "true"
+video_scale_integer_axis = "1"
+video_scale_integer_scaling = "1"
+```
+
+To define content directory overrides, I personally find easier to directly add ```platform.cfg``` files with a one line content among the following.
+
+```
+video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_RF.filt"
+video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_Composite.filt"
+video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_S-Video.filt"
+video_filter = "/data/user/0/com.retroarch.aarch64/filters/video/Blargg_NTSC_SNES_RGB.filt"
+```
+
+
+
+
+
+
+
