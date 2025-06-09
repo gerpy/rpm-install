@@ -2,7 +2,7 @@
 
 > There are many general guidelines such as https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/.
 > The present notes are personnal and reflect my own tastes. I don't rewrite everything out there but rather focus on topics which obvioulsy require too much time for content creators in a permanent rush, such as scaling or shaders with the attention they deserve).
-> At the end, the overall system is very **unified** over emulated platforms, with the generalisation of not fancy yet effective LCD and CRT shaders, custom dual-screen layouts and optimal scaling regarding the RPM screen. No offense and I get the point of a content creator wanting to show different possibilities, but settings such as in https://www.youtube.com/watch?v=DqoQ-O_RKLc are all over the place and I'm way too picky to tolerate such inconsistencies in rendering. 
+> At the end, the following settings permit a very **unified** over emulated platforms, with the generalisation of not fancy yet effective LCD and CRT shaders, custom dual-screen layouts and optimal scaling regarding the RPM screen. No offense and I get the point of a content creator wanting to show different possibilities, but settings such as in https://www.youtube.com/watch?v=DqoQ-O_RKLc are all over the place and I'm way too picky to tolerate such inconsistencies in rendering. 
 
 ---
 
