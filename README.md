@@ -213,13 +213,7 @@ I was not able to find the config files so I was left with the touchscreen to tr
 
 ---
 
-## Shaders for standalone emularors
-
-> For home consoles, I like CRT shaders but I'm not after fancy or high-fidelity effects. I'm just after the general mood by:
-> - Considering a CRT shader as a specialized and effective way to perform interpolation  
-> - Getting more colors and better gradients out of the limited 8-bit and 16-bit palettes  
-> - Helping with de-dithering for 8-bit and 16-bit games  
-> - Giving a bit more "organic" feel rather than flat, clinical square pixels
+## Shaders for standalone emulators
 
 ### Dolphin
 
