@@ -1,3 +1,5 @@
+This was a preliminary version with a few rough edges, so some adjustments will likely be needed.
+
 # Install notes for the Retroid Pocket Mini handheld console
 
 *There are many general and very valuable guidelines such as the frequently updated and very valuable [RetroGamesCorps's](https://retrogamecorps.com/2022/03/13/android-emulation-starter-guide/). The present notes are personnal and reflect my own tastes. I don't rewrite everything out there but rather focus on topics which obvioulsy require too much time for content creators in a permanent rush, such as scaling or shaders with the attention they deserve.*
