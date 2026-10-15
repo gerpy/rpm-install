@@ -1,4 +1,4 @@
-This was a preliminary version with a few rough edges, so some adjustments will likely be needed.
+> This was a preliminary version with a few rough edges, so some adjustments will likely be needed.
 
 # Install notes for the Retroid Pocket Mini handheld console
 
